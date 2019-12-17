@@ -4,7 +4,7 @@
 // Create though user input (button) specifying the # of children to generate & ranges of said children
 // Each factory must be removable, name editable & have lower/upper bound for the random num generation ---- ????
 
-// Changes should be immediate w/o refreshing (Name of that free server where I can do this, Fire something)
+// Changes should be immediate w/o refreshing (Firebase)
 // State of tree should be persistent & not be undone w/ reloading
 // All of a factories existing child does should be removed up each new generation ---- ????
 // Add security ---- ????
