@@ -4,7 +4,9 @@
   "description": "Coding Challenge, Create a live-updating tree view as a web application",
   "main": "index.js",
   "dependencies": {
-    "heroku": "^7.35.0"
+    "heroku": "^7.35.0",
+    "mysql": "^2.17.1",
+    "sequelize": "^5.21.3"
   },
   "devDependencies": {},
   "scripts": {
