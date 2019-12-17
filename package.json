@@ -2,15 +2,19 @@
   "name": "livetree",
   "version": "1.0.0",
   "description": "Coding Challenge, Create a live-updating tree view as a web application",
-  "main": "index.js",
+  "main": "index.html",
   "dependencies": {
     "heroku": "^7.35.0",
     "mysql": "^2.17.1",
-    "sequelize": "^5.21.3"
+    "sequelize": "^5.21.3",
+    "http-server": "^0.9.0",
+    "live-server": "^1.2.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/.bin/http-server",
+    "local": "node_modules/.bin/live-server --port=8080"
   },
   "repository": {
     "type": "git",
