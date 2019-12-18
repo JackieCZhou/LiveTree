@@ -1,13 +1,23 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Heroku - Hello World!</title>
-    <link rel="styles" href="../css/livetree.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linking Heroku</title>
+        <link rel="styles" href="../css/livetree.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+        <link href="css/bootnavbar.css" rel="stylesheet">
+
+
+    </head>
 
 <body>
     <h1>Live-updating Tree View</h1>
@@ -27,10 +37,12 @@
         <div class="col-9">
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                    aria-labelledby="v-pills-home-tab">Click on each Factory to add a random number under each name.
+                    aria-labelledby="v-pills-home-tab">Select your favorite celebrity to see how many fans they
+                    currently have in your area.
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    Edit the names of a factory by clicking the edit button</div>
+                    Remove or edit each tab by clicking on their name. Add a new celebrity through the "Add Men" or "Add
+                    Women" tabs.</div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                     Check out my portfolio
                     <a href='https://jackieczhou.github.io/portfolio/' button type="button" class="btn btn-link"
@@ -40,32 +52,31 @@
     </div>
 
     <br>
-
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Chris Evans</a>
-      <a class="dropdown-item" href="#">Ryan Reynolds</a>
-      <a class="dropdown-item" href="#">Will Ferrell</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Add Men</a>
-    </div>
-  </li>
-  <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Ruth Bader Ginsburg</a>
-          <a class="dropdown-item" href="#">Oprah Winfrey</a>
-          <a class="dropdown-item" href="#">Emma Watson</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Add Women</a>
-        </div>
-      </li>
-</ul>
+    <nav class="navbar navbar-expand-lg navbark-dark bg-primary" id="navbar"></nav>
+    <ul class="nav nav-pills">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false">Men</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Chris Evans</a>
+                <a class="dropdown-item" href="#">Ryan Reynolds</a>
+                <a class="dropdown-item" href="#">Will Ferrell</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Add Men</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false">Women</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Ruth Bader Ginsburg</a>
+                <a class="dropdown-item" href="#">Oprah Winfrey</a>
+                <a class="dropdown-item" href="#">Emma Watson</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Add Women</a>
+            </div>
+        </li>
+    </ul>
 
 
     <!-- <form class="form-inline">
@@ -131,13 +142,16 @@
             background-color: rgb(4, 4, 89);
             margin-left: 100px;
         }
- 
+
         .nav,
-        .nav-pills, .form-inline, .form, .nav-link,
-        .dropdown-item, .dropdown-menu.show  {
+        .nav-pills,
+        .form-inline,
+        .form,
+        .nav-link,
+        .dropdown-item,
+        .dropdown-menu.show {
             margin-left: 100px;
         }
-
     </style>
 
 
@@ -151,6 +165,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="js/bootnavbar.js"></script>
+    <script>
+        $('#navbar').bootnavbar();
+    </script>
 </body>
 
 </html>
