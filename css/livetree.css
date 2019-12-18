@@ -30,6 +30,10 @@ h1 {
 .nav .nav-pills {
     margin-left: 83px;
 }
-.nav-link{
-    margin-left: 115px;
+
+.nav-link .dropdown-item {
+    margin-left: 83px;
+}
+#women{
+    margin-left: 155px;
 }
