@@ -10,16 +10,24 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Linking Heroku</title>
-        <link rel="styles" href="../css/livetree.css">
+        <link rel="styles" href="style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
         <link href="css/bootnavbar.css" rel="stylesheet">
 
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+
+
 
     </head>
 
 <body>
+
+
+
     <h1>Live-updating Tree View</h1>
 
 
@@ -41,7 +49,8 @@
                     currently have in your area.
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    Add more fans to a celebrities fanbase, remove or edit the name of each celebrite tab by clicking
+                    Add more fans to a celebrities fanbase, remove or edit the name of each celebrite tab by
+                    clicking
                     on their name. Add a new celebrity through the "Add Men" or "Add
                     Women" tabs.</div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
@@ -53,201 +62,17 @@
     </div>
 
     <br>
-    <nav class="navbar navbar-expand-lg navbark-dark" style="background-color: none" id="navbar">
-        <ul class="nav nav-pills">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">Men</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#" id="thetext" onclick="toggleEditor()">Chris Evans</a>
-                    <a class="dropdown-item" href="#"id="thetext2" onclick="toggleEditor2()">Ryan Reynolds</a>
-                    <a class="dropdown-item" href="#">Will Ferrell</a>
-                    <a class="dropdown-item" href="#">Add Men</a>
-                </div>
-                <div id="editor">
-                    <textarea id="ta1" name="ta1" rows="10" cols="50"></textarea><br />
-                    <input name="submit" id="submit" type="button" value="Edit Text" onclick="doEdit()" />
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">Women</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Ruth Bader Ginsburg</a>
-                    <a class="dropdown-item" href="#">Oprah Winfrey</a>
-                    <a class="dropdown-item" href="#">Emma Watson</a>
-                    <a class="dropdown-item" href="#">Add Women</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
 
-    <!-- <form class="form-inline">
-        <div class="form-group mb-2">
-        </div>
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="newFactory" class="sr-only">Add New Factory</label>
-            <input type="input" class="form-control" id="newFactory" placeholder="New Factory">
-        </div>
-        <button type="submit" style="color:navy" class="btn mb-2">Add</button>
-    </form>
+    <ul id="userList"></ul>
 
-    <br>
-
-    <ul class="nav nav-pills">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false" style="background-color:navy; margin-left:100px; color:white ">Check out how many followers your favorite celebrties have!</a>
-            <div class="dropdown-menu">
-                <a class="nav-link dropdown-toggle" id="women" data-toggle="dropdown" href="#" role="button"
-                    aria-haspopup="true" aria-expanded="false" style="background-color:navy; margin-left:83px">Women</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" id="ranNum" href="#">Ruth Bader Ginsburg</a>
-                    <a class="dropdown-item" id="ranNum" href="#">Oprah Winfrey</a>
-                    <a class="dropdown-item" id="ranNum" href="#">Emma Watson</a>
-                </div>
-                <a class="nav-link dropdown-toggle" id="men"data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false" style="background-color:navy; margin-left:83px">Men</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" id="ranNum" href="#">Chris Evans</a>
-                    <a class="dropdown-item" id="ranNum" href="#">Ryan Reynolds</a>
-                    <a class="dropdown-item" id="ranNum" href="#">Will Ferrell</a>
-                </div>
-            </div>
-        </li>
-    </ul> -->
+    <div id="userDetail">
+        <!-- <p >Name :<strong class="detailName"></strong></p> -->
+    </div>
 
 
-    <script>
-        function toggleEditor() {
-            var theText = document.getElementById('thetext');
-            var theEditor = document.getElementById('ta1');
-            var editorArea = document.getElementById('editor');
-
-            //set text in text div to textarea
-            //correct line breaks, prevent HTML injection
-            var subject = theText.innerHTML;
-            subject = subject.replace(new RegExp("<br />", "gi"), 'n');
-            subject = subject.replace(new RegExp("<br />", "gi"), 'n');
-            subject = subject.replace(new RegExp("<", "gi"), '<');
-            subject = subject.replace(new RegExp(">", "gi"), '>');
-            theEditor.value = subject;
-
-            //hide text, show editor
-            theText.style.display = 'none';
-            editorArea.style.display = 'inline';
-        }
-
-        function doEdit() {
-            var theText = document.getElementById('thetext');
-            var theEditor = document.getElementById('ta1');
-            var editorArea = document.getElementById('editor');
-            var subject = theEditor.value;
-            subject = subject.replace(new RegExp("<", "g"), '<');
-            subject = subject.replace(new RegExp(">", "g"), '>');
-            subject = subject.replace(new RegExp("n", "g"), '<br />');
-            theText.innerHTML = subject;
-
-            //hide editor, show text
-            theText.style.display = 'inline';
-            editorArea.style.display = 'none';
-        }
-        function toggleEditor2() {
-            var theText = document.getElementById('thetext2');
-            var theEditor = document.getElementById('ta1');
-            var editorArea = document.getElementById('editor');
-
-            //set text in text div to textarea
-            //correct line breaks, prevent HTML injection
-            var subject = theText.innerHTML;
-            subject = subject.replace(new RegExp("<br />", "gi"), 'n');
-            subject = subject.replace(new RegExp("<br />", "gi"), 'n');
-            subject = subject.replace(new RegExp("<", "gi"), '<');
-            subject = subject.replace(new RegExp(">", "gi"), '>');
-            theEditor.value = subject;
-
-            //hide text, show editor
-            theText.style.display = 'none';
-            editorArea.style.display = 'inline';
-        }
-
-        function doEdit() {
-            var theText = document.getElementById('thetext2');
-            var theEditor = document.getElementById('ta1');
-            var editorArea = document.getElementById('editor');
-            var subject = theEditor.value;
-            subject = subject.replace(new RegExp("<", "g"), '<');
-            subject = subject.replace(new RegExp(">", "g"), '>');
-            subject = subject.replace(new RegExp("n", "g"), '<br />');
-            theText.innerHTML = subject;
-
-            //hide editor, show text
-            theText.style.display = 'inline';
-            editorArea.style.display = 'none';
-        }
-    </script>
 
 
-    <style>
-        div#editor {
-            display: none;
-        }
 
-        #submit {
-            height: 20px;
-            width: 100px;
-            border: navy;
-            margin-left: 100px;
-        }
-
-        textarea {
-            height: 40px;
-            width: 150px;
-            margin-left: 100px;
-            border: none;
-        }
-
-        h1 {
-            color: rgb(0, 12, 96);
-            border: 3px rgb(0, 12, 96) solid;
-            font-size: 3em;
-            padding: 1em;
-            margin: 0.5em;
-            text-align: center;
-            font-family: sans-serif;
-        }
-
-
-        /* #v-pills-home-tab {
-            background-color: rgb(4, 4, 89);
-            margin-left: 100px;
-        }
-
-        #v-pills-profile-tab {
-            background-color: rgb(4, 4, 89);
-            margin-left: 100px;
-        }
-
-        #v-pills-settings-tab {
-            background-color: rgb(4, 4, 89);
-            margin-left: 100px;
-        } */
-
-        .nav,
-        .nav-pills,
-        .form-inline,
-        .form,
-        .nav-link,
-        .dropdown-menu.show {
-            margin-left: 100px;
-            border: none;
-        }
-
-        .nav-link {
-            background-color: rgb(4, 4, 89);
-            color: white;
-        }
-    </style>
 
 
 
@@ -261,9 +86,28 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="js/bootnavbar.js"></script>
+
+
+
     <script>
-        $('#navbar').bootnavbar();
+        var firebaseConfig = {
+            apiKey: "AIzaSyBJbH6n92KJxfGCirXHv_VFM0A1GwwZGU0",
+            authDomain: "live-tree-16eb2.firebaseapp.com",
+            databaseURL: "https://live-tree-16eb2.firebaseio.com",
+            projectId: "live-tree-16eb2",
+            storageBucket: "live-tree-16eb2.appspot.com",
+            messagingSenderId: "1040801579497",
+            appId: "1:1040801579497:web:ea0f283b6ed09d53cbcb78",
+            measurementId: "G-59GL88Y848"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
     </script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
 </body>
 
 </html>

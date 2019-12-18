@@ -9,3 +9,42 @@
 // All of a factories existing child does should be removed up each new generation ---- ????
 // Add security ---- ????
 // Host on Heroku
+
+var Firebase = require("firebase");
+var axios = require("axios");
+
+firebase.initializeApp({
+    databaseURL: "https://live-tree-number-generator.firebaseio.com",
+});
+
+var database = firebase.database();
+var newEntry = database.ref();
+
+
+var newMan = "";
+var newWoman = "";
+
+$("#submit").on("click", function (event) {
+    manEntered = $("#man-input").val().trim();
+    womanEntered = $("woman-input").val().trim();
+
+
+    newEntry.push({
+        Men: manEntered,
+        Women: womanEntered,
+    })
+})
+
+newEntry.on("child_added", function(childSnapshot){
+    var newAdd = childSnapshot.val();
+
+    var tBody = $("tbody");
+    var tRow = $("<tr>");
+
+    var manId = $("<td>").text(newAdd.man);
+    var womanId = $("<td>").text(newAdd.woman);
+
+    tRow.append(newMan, newWoman);
+    tBody.append(tRow);
+    $("#table").append(tBody);
+})
