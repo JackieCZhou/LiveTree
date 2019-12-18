@@ -59,10 +59,10 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">Men</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#" id="thetext1" onclick="toggleEditor()">Chris Evans</a>
-                    <a class="dropdown-item" href="#" id="thetext2" onclick="toggleEditor()">Ryan Reynolds</a>
-                    <a class="dropdown-item" href="#" id="thetext3" onclick="toggleEditor()">Will Ferrell</a>
-                    <a class="dropdown-item" href="#" >Add Men</a>
+                    <a class="dropdown-item" href="#" id="thetext" onclick="toggleEditor()">Chris Evans</a>
+                    <a class="dropdown-item" href="#">Ryan Reynolds</a>
+                    <a class="dropdown-item" href="#">Will Ferrell</a>
+                    <a class="dropdown-item" href="#">Add Men</a>
                 </div>
                 <div id="editor">
                     <textarea id="ta1" name="ta1" rows="10" cols="50"></textarea><br />
@@ -73,9 +73,9 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">Women</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#" id="thetext4" onclick="toggleEditor()">Ruth Bader Ginsburg</a>
-                    <a class="dropdown-item" href="#" id="thetext5" onclick="toggleEditor()">Oprah Winfrey</a>
-                    <a class="dropdown-item" href="#" id="thetext6" onclick="toggleEditor()">Emma Watson</a>
+                    <a class="dropdown-item" href="#">Ruth Bader Ginsburg</a>
+                    <a class="dropdown-item" href="#">Oprah Winfrey</a>
+                    <a class="dropdown-item" href="#">Emma Watson</a>
                     <a class="dropdown-item" href="#">Add Women</a>
                 </div>
             </li>
@@ -120,7 +120,7 @@
 
     <script>
         function toggleEditor() {
-            var theText = document.getElementsById('thetext1'; 'thetext2'; 'thetext3'; 'thetext4'; 'thetext5'; 'thetext6');
+            var theText = document.getElementById('thetext');
             var theEditor = document.getElementById('ta1');
             var editorArea = document.getElementById('editor');
 
@@ -139,7 +139,7 @@
         }
 
         function doEdit() {
-            var theText = document.getElementsById('thetext1'; 'thetext2'; 'thetext3'; 'thetext4'; 'thetext5'; 'thetext6');
+            var theText = document.getElementById('thetext');
             var theEditor = document.getElementById('ta1');
             var editorArea = document.getElementById('editor');
             var subject = theEditor.value;
