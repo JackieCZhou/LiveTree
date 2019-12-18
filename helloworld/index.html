@@ -118,46 +118,49 @@
     </ul> -->
 
 
-  <script>
-  function toggleEditor() {
-   var theText = document.getElementById('thetext');
-   var theEditor = document.getElementById('ta1');
-   var editorArea = document.getElementById('editor');
- 
-   //set text in text div to textarea
-   //correct line breaks, prevent HTML injection
-   var subject = theText.innerHTML;
-   subject = subject.replace(new RegExp("<br />", "gi"), 'n');
-   subject = subject.replace(new RegExp("<br />", "gi"), 'n');
-   subject = subject.replace(new RegExp("<", "gi"), '<');
-   subject = subject.replace(new RegExp(">", "gi"), '>');
-   theEditor.value = subject;
- 
-   //hide text, show editor
-   theText.style.display = 'none';
-   editorArea.style.display = 'inline';
-}
+    <script>
+        function toggleEditor() {
+            var theText = document.getElementById('thetext');
+            var theEditor = document.getElementById('ta1');
+            var editorArea = document.getElementById('editor');
 
-function doEdit() {
-   var theText = document.getElementById('thetext');
-   var theEditor = document.getElementById('ta1');
-   var editorArea = document.getElementById('editor');
-   var subject = theEditor.value;
-   subject = subject.replace(new RegExp("<", "g"), '<');
-   subject = subject.replace(new RegExp(">", "g"), '>');
-   subject = subject.replace(new RegExp("n", "g"), '<br />');
-   theText.innerHTML = subject;
- 
-   //hide editor, show text
-   theText.style.display = 'inline';
-   editorArea.style.display = 'none';
-}
-</script>
+            //set text in text div to textarea
+            //correct line breaks, prevent HTML injection
+            var subject = theText.innerHTML;
+            subject = subject.replace(new RegExp("<br />", "gi"), 'n');
+            subject = subject.replace(new RegExp("<br />", "gi"), 'n');
+            subject = subject.replace(new RegExp("<", "gi"), '<');
+            subject = subject.replace(new RegExp(">", "gi"), '>');
+            theEditor.value = subject;
+
+            //hide text, show editor
+            theText.style.display = 'none';
+            editorArea.style.display = 'inline';
+        }
+
+        function doEdit() {
+            var theText = document.getElementById('thetext');
+            var theEditor = document.getElementById('ta1');
+            var editorArea = document.getElementById('editor');
+            var subject = theEditor.value;
+            subject = subject.replace(new RegExp("<", "g"), '<');
+            subject = subject.replace(new RegExp(">", "g"), '>');
+            subject = subject.replace(new RegExp("n", "g"), '<br />');
+            theText.innerHTML = subject;
+
+            //hide editor, show text
+            theText.style.display = 'inline';
+            editorArea.style.display = 'none';
+        }
+    </script>
 
 
     <style>
         div#editor {
             display: none;
+            border:none;
+            height: 50px;
+            width: 100px;
         }
 
         h1 {
