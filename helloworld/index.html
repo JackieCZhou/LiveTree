@@ -59,10 +59,14 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">Men</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Chris Evans</a>
+                    <a class="dropdown-item" href="#" id="thetext" onclick="toggleEditor()">Chris Evans</a>
                     <a class="dropdown-item" href="#">Ryan Reynolds</a>
                     <a class="dropdown-item" href="#">Will Ferrell</a>
                     <a class="dropdown-item" href="#">Add Men</a>
+                </div>
+                <div id="editor">
+                    <textarea id="ta1" name="ta1" rows="10" cols="50"></textarea><br />
+                    <input name="submit" id="submit" type="button" value="Edit Text" onclick="doEdit()" />
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -114,8 +118,48 @@
     </ul> -->
 
 
+  <script>
+  function toggleEditor() {
+   var theText = document.getElementById('thetext');
+   var theEditor = document.getElementById('ta1');
+   var editorArea = document.getElementById('editor');
+ 
+   //set text in text div to textarea
+   //correct line breaks, prevent HTML injection
+   var subject = theText.innerHTML;
+   subject = subject.replace(new RegExp("<br />", "gi"), 'n');
+   subject = subject.replace(new RegExp("<br />", "gi"), 'n');
+   subject = subject.replace(new RegExp("<", "gi"), '<');
+   subject = subject.replace(new RegExp(">", "gi"), '>');
+   theEditor.value = subject;
+ 
+   //hide text, show editor
+   theText.style.display = 'none';
+   editorArea.style.display = 'inline';
+}
+
+function doEdit() {
+   var theText = document.getElementById('thetext');
+   var theEditor = document.getElementById('ta1');
+   var editorArea = document.getElementById('editor');
+   var subject = theEditor.value;
+   subject = subject.replace(new RegExp("<", "g"), '<');
+   subject = subject.replace(new RegExp(">", "g"), '>');
+   subject = subject.replace(new RegExp("n", "g"), '<br />');
+   theText.innerHTML = subject;
+ 
+   //hide editor, show text
+   theText.style.display = 'inline';
+   editorArea.style.display = 'none';
+}
+</script>
+
 
     <style>
+        div#editor {
+            display: none;
+        }
+
         h1 {
             color: rgb(0, 12, 96);
             border: 3px rgb(0, 12, 96) solid;
@@ -150,7 +194,7 @@
         .dropdown-menu.show {
             margin-left: 100px;
             border: none;
-        } 
+        }
 
         .nav-link {
             background-color: rgb(4, 4, 89);
