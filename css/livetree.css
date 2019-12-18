@@ -27,3 +27,9 @@ h1 {
 .form-inline  {
     margin-left: 83px;
 }
+.nav .nav-pills {
+    margin-left: 83px;
+}
+.nav-link{
+    margin-left: 115px;
+}
