@@ -60,7 +60,7 @@
                     aria-expanded="false">Men</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#" id="thetext" onclick="toggleEditor()">Chris Evans</a>
-                    <a class="dropdown-item" href="#">Ryan Reynolds</a>
+                    <a class="dropdown-item" href="#"id="thetext2" onclick="toggleEditor2()">Ryan Reynolds</a>
                     <a class="dropdown-item" href="#">Will Ferrell</a>
                     <a class="dropdown-item" href="#">Add Men</a>
                 </div>
@@ -140,6 +140,39 @@
 
         function doEdit() {
             var theText = document.getElementById('thetext');
+            var theEditor = document.getElementById('ta1');
+            var editorArea = document.getElementById('editor');
+            var subject = theEditor.value;
+            subject = subject.replace(new RegExp("<", "g"), '<');
+            subject = subject.replace(new RegExp(">", "g"), '>');
+            subject = subject.replace(new RegExp("n", "g"), '<br />');
+            theText.innerHTML = subject;
+
+            //hide editor, show text
+            theText.style.display = 'inline';
+            editorArea.style.display = 'none';
+        }
+        function toggleEditor2() {
+            var theText = document.getElementById('thetext2');
+            var theEditor = document.getElementById('ta1');
+            var editorArea = document.getElementById('editor');
+
+            //set text in text div to textarea
+            //correct line breaks, prevent HTML injection
+            var subject = theText.innerHTML;
+            subject = subject.replace(new RegExp("<br />", "gi"), 'n');
+            subject = subject.replace(new RegExp("<br />", "gi"), 'n');
+            subject = subject.replace(new RegExp("<", "gi"), '<');
+            subject = subject.replace(new RegExp(">", "gi"), '>');
+            theEditor.value = subject;
+
+            //hide text, show editor
+            theText.style.display = 'none';
+            editorArea.style.display = 'inline';
+        }
+
+        function doEdit() {
+            var theText = document.getElementById('thetext2');
             var theEditor = document.getElementById('ta1');
             var editorArea = document.getElementById('editor');
             var subject = theEditor.value;
