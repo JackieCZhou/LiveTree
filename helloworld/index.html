@@ -77,59 +77,55 @@
     <br>
 
     <div class="container">
-        <table class="table">
-            <thread>
-
-                <nav class="navbar navbar-expand-lg navbark-dark" style="background-color: none" id="navbar">
-                    <ul class="nav nav-pills" id="userList">
-                        <li class="nav-item dropdown"><a class="table nav-link dropdown-toggle" data-toggle="dropdown"
-                                href="#" role="button" aria-haspopup="true" aria-expanded="false"><label
-                                    for="trainadd">Celebrities</label></a>
-                            <div class="dropdown-menu">
-                                <tr>
-                                    <a class="dropdown-item" input type="text" class="form-control" id="train-input"
-                                        placeholder="Celebrity"></a>
-                                    <a class="dropdown-item" input type="number" class="form-control"
-                                        id="destination-input" placeholder="Fans"></a>
-                                </tr>
-            </thread>
-            <tbody id="table">
-            </tbody>
-        </table>
-        <a class="dropdown-item" href="#">Ryan Reynolds</a>
-        <a class="dropdown-item" href="#">Will Ferrell</a>
-        </li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                aria-haspopup="true" aria-expanded="false">Women</a>
-            <div class="dropdown-menu"><a class="dropdown-item" href="#">Ruth Bader Ginsburg</a><a class="dropdown-item"
-                    href="#">Oprah Winfrey</a><a class="dropdown-item" href="#">Emma
-                    Watson</a><a class="dropdown-item" href="#">Add Women</a></div>
-        </li>
-        </ul>
-
-        </nav>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="color:navy;">Train Name</th>
+                            <th scope="col" style="color:navy;">Destination</th>
+                            <th scope="col" style="color:navy;">Frerquency (min)</th>
+                            <th scope="col" style="color:navy;">Next Arrival</th>
+                            <th scope="col" style="color:navy;">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
         <form>
-            </nav>
 
-
-            <h2>Add Celebrities</h2>
+            <h2>Add Trains</h2>
             <div class="form" style="border:2px solid navy;">
 
             </div>
             <div class="form-group">
-                <label for="trainadd">Name:</label>
-                <input type="text" class="form-control" id="train-input" placeholder="Name">
+                <label for="trainadd">Train Name</label>
+                <input type="text" class="form-control" id="train-input" placeholder="Train Name">
             </div>
             <div class="form-group">
-                <label for="trainadd">Number of Fans:</label>
-                <input type="number" class="form-control" id="destination-input" placeholder="Fans">
+                <label for="trainadd">Destination</label>
+                <input type="text" class="form-control" id="destination-input" placeholder="Destination">
+            </div>
+            <div class="form-group">
+                <label for="trainadd">First Train Time (hh:mm)</label>
+                <input type="text" class="form-control" id="start-input" placeholder="First Train">
+            </div>
+            <div class="form-group">
+                <label for="trainadd">Frequency (min)</label>
+                <input type="text" class="form-control" id="freq-input" placeholder="Frequency">
             </div>
         </form>
-        <button type="button" style="color:navy;" class="btn border-secondary" id="submit">Submit</button>
 
-        <script>
-            $('#navbar').bootnavbar();
-        </script>
+        <button type="button" style="color:navy;" class="btn border-secondary" id="submit">Submit</button>
+    </div>
+    </div>
+    <br>
+    <script>
+        $('#navbar').bootnavbar();
+    </script>
 
     </div>
 
