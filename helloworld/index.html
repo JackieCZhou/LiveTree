@@ -50,78 +50,88 @@
 
             <br>
 
-            <tbody id="table">
 
 
-                <div class="col-9">
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                            aria-labelledby="v-pills-home-tab">Select your favorite celebrity to see how many fans they
-                            currently have in your area.
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                            aria-labelledby="v-pills-profile-tab">
-                            Add more fans to a celebrities fanbase, remove or edit the name of each celebrite tab by
-                            clicking
-                            on their name. Add a new celebrity through the "Add Men" or "Add
-                            Women" tabs.</div>
-                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                            aria-labelledby="v-pills-settings-tab">
-                            Check out my portfolio
-                            <a href='https://jackieczhou.github.io/portfolio/' button type="button" class="btn btn-link"
-                                style='background-color:none'>here!</a></div>
+
+            <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">Select your favorite celebrity to see how many fans they
+                        currently have in your area.
                     </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        Add more fans to a celebrities fanbase, remove or edit the name of each celebrite tab by
+                        clicking
+                        on their name. Add a new celebrity through the "Add Men" or "Add
+                        Women" tabs.</div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
+                        Check out my portfolio
+                        <a href='https://jackieczhou.github.io/portfolio/' button type="button" class="btn btn-link"
+                            style='background-color:none'>here!</a></div>
                 </div>
+            </div>
         </div>
     </div>
     <br>
 
+    <div class="container">
+        <table class="table">
+            <thread>
 
-    <nav class="navbar navbar-expand-lg navbark-dark" style="background-color: none" id="navbar">
-        <ul class="nav nav-pills" id="userList">
-            <li class="nav-item dropdown"><a class="table nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                    role="button" aria-haspopup="true" aria-expanded="false"><label
-                        for="trainadd">Celebrities</label></a>
-                <div class="dropdown-menu">
-                    <tr>
-                        <a class="dropdown-item" input type="text" class="form-control" id="train-input"
-                            placeholder="Celebrity"></a>
-                        <a class="dropdown-item" input type="number" class="form-control" id="destination-input"
-                            placeholder="Fans"></a>
-                    </tr>
-                    <a class="dropdown-item" href="#">Ryan Reynolds</a>
-                    <a class="dropdown-item" href="#">Will Ferrell</a>
-            </li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                    role="button" aria-haspopup="true" aria-expanded="false">Women</a>
-                <div class="dropdown-menu"><a class="dropdown-item" href="#">Ruth Bader Ginsburg</a><a
-                        class="dropdown-item" href="#">Oprah Winfrey</a><a class="dropdown-item" href="#">Emma
-                        Watson</a><a class="dropdown-item" href="#">Add Women</a></div>
-            </li>
+                <nav class="navbar navbar-expand-lg navbark-dark" style="background-color: none" id="navbar">
+                    <ul class="nav nav-pills" id="userList">
+                        <li class="nav-item dropdown"><a class="table nav-link dropdown-toggle" data-toggle="dropdown"
+                                href="#" role="button" aria-haspopup="true" aria-expanded="false"><label
+                                    for="trainadd">Celebrities</label></a>
+                            <div class="dropdown-menu">
+                                <tr>
+                                    <a class="dropdown-item" input type="text" class="form-control" id="train-input"
+                                        placeholder="Celebrity"></a>
+                                    <a class="dropdown-item" input type="number" class="form-control"
+                                        id="destination-input" placeholder="Fans"></a>
+                                </tr>
+            </thread>
+            <tbody id="table">
+            </tbody>
+        </table>
+        <a class="dropdown-item" href="#">Ryan Reynolds</a>
+        <a class="dropdown-item" href="#">Will Ferrell</a>
+        </li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                aria-haspopup="true" aria-expanded="false">Women</a>
+            <div class="dropdown-menu"><a class="dropdown-item" href="#">Ruth Bader Ginsburg</a><a class="dropdown-item"
+                    href="#">Oprah Winfrey</a><a class="dropdown-item" href="#">Emma
+                    Watson</a><a class="dropdown-item" href="#">Add Women</a></div>
+        </li>
         </ul>
-        <tbody id="table"></tbody>
-    </nav>
 
-    <form>
-        <h2>Add Celebrities</h2>
-        <div class="form" style="border:2px solid navy;">
+        </nav>
+        <form>
+            </nav>
 
-        </div>
-        <div class="form-group">
-            <label for="trainadd">Name:</label>
-            <input type="text" class="form-control" id="train-input" placeholder="Name">
-        </div>
-        <div class="form-group">
-            <label for="trainadd">Number of Fans:</label>
-            <input type="number" class="form-control" id="destination-input" placeholder="Fans">
-        </div>
-    </form>
-    <button type="button" style="color:navy;" class="btn border-secondary" id="submit">Submit</button>
 
-    <script>
-        $('#navbar').bootnavbar();
-    </script>
+            <h2>Add Celebrities</h2>
+            <div class="form" style="border:2px solid navy;">
 
+            </div>
+            <div class="form-group">
+                <label for="trainadd">Name:</label>
+                <input type="text" class="form-control" id="train-input" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="trainadd">Number of Fans:</label>
+                <input type="number" class="form-control" id="destination-input" placeholder="Fans">
+            </div>
+        </form>
+        <button type="button" style="color:navy;" class="btn border-secondary" id="submit">Submit</button>
+
+        <script>
+            $('#navbar').bootnavbar();
+        </script>
+
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
