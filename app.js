@@ -21,49 +21,49 @@ app.listen(PORT, function() {
 });
 
 
-var database = firebase.database();
-var newEntry = database.ref();
+// var database = firebase.database();
+// var newEntry = database.ref();
 
-var fansEntered = "";
-var nameEntered = "";
+// var fansEntered = "";
+// var nameEntered = "";
 
 
-$("#submit").on("click", function(event) {
-    event.preventDefault();
+// $("#submit").on("click", function(event) {
+//     event.preventDefault();
 
-    nameEntered = $("#name-input").val().trim();
-    fansEntered = $("#fans-input").val().trim();
+//     nameEntered = $("#name-input").val().trim();
+//     fansEntered = $("#fans-input").val().trim();
     
 
 
-    newEntry.push({
-        Name: nameEntered,
-        Fans: fansEntered,
+//     newEntry.push({
+//         Name: nameEntered,
+//         Fans: fansEntered,
         
-    })
+//     })
 
 
-});
+// });
 
 
-newEntry.on("child_added", function(childSnapshot) {
-    var newAdd = childSnapshot.val();
+// newEntry.on("child_added", function(childSnapshot) {
+//     var newAdd = childSnapshot.val();
     
-    console.log("Name: " + newAdd.name);
-    console.log("Fans: " + newAdd.fans);
+//     console.log("Name: " + newAdd.name);
+//     console.log("Fans: " + newAdd.fans);
     
-    var tBody = $("tbody")
-    var tRow = $("<tr>");
+//     var tBody = $("tbody")
+//     var tRow = $("<tr>");
 
-    var trainTd = $("<td>").text(newAdd.name);
-    var destinationTd = $("<td>").text(newAdd.fans);
-
-
+//     var trainTd = $("<td>").text(newAdd.name);
+//     var destinationTd = $("<td>").text(newAdd.fans);
 
 
-    tRow.append(nameTd, fansTd);
-    tBody.append(tRow);
-    $("#table").append(tBody);
+
+
+//     tRow.append(nameTd, fansTd);
+//     tBody.append(tRow);
+//     $("#table").append(tBody);
     
 
-});
+// });
