@@ -1,0 +1,19 @@
+{
+  "name": "livetree",
+  "version": "1.0.0",
+  "description": "Coding Challenge, Create a live-updating tree view as a web application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackieCZhou/LiveTree.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackieCZhou/LiveTree/issues"
+  },
+  "homepage": "https://github.com/JackieCZhou/LiveTree#readme"
+}
