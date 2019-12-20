@@ -2,7 +2,7 @@
   "name": "livetree",
   "version": "1.0.0",
   "description": "Coding Challenge, Create a live-updating tree view as a web application",
-  "main": "app.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
