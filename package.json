@@ -2,7 +2,7 @@
   "name": "livetree",
   "version": "1.0.0",
   "description": "Coding Challenge, Create a live-updating tree view as a web application",
-  "main": "index.html",
+  "main": "node server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,5 @@
   "bugs": {
     "url": "https://github.com/JackieCZhou/LiveTree/issues"
   },
-  "homepage": "https://github.com/JackieCZhou/LiveTree#readme"
+  "homepage": "https://github.com/JackieCZhou/LiveTree/public/index.html"
 }
