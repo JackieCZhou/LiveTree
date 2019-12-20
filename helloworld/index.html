@@ -10,15 +10,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
-    <link href="css/bootnavbar.css" rel="stylesheet">
 </head>
 
 <body>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 
+
     <script>
-        var firebaseConfig = {
+        var config = {
             apiKey: "AIzaSyBJbH6n92KJxfGCirXHv_VFM0A1GwwZGU0",
             authDomain: "live-tree-16eb2.firebaseapp.com",
             databaseURL: "https://live-tree-16eb2.firebaseio.com",
@@ -28,52 +27,12 @@
             appId: "1:1040801579497:web:ea0f283b6ed09d53cbcb78",
             measurementId: "G-59GL88Y848"
         };
-        firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(config);
     </script>
 
 
 
     <h1>Live-updating Tree View</h1>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-                        aria-controls="v-pills-home" aria-selected="false">Home</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                        aria-controls="v-pills-profile" aria-selected="false">Edit</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
-                        aria-controls="v-pills-settings" aria-selected="false">About Me</a>
-                </div>
-            </div>
-
-            <br>
-
-
-
-
-            <div class="col-9">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                        aria-labelledby="v-pills-home-tab">Select your favorite celebrity to see how many fans they
-                        currently have in your area.
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                        aria-labelledby="v-pills-profile-tab">
-                        Add more fans to a celebrities fanbase, remove or edit the name of each celebrite tab by
-                        clicking
-                        on their name. Add a new celebrity through the "Add Men" or "Add
-                        Women" tabs.</div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                        aria-labelledby="v-pills-settings-tab">
-                        Check out my portfolio
-                        <a href='https://jackieczhou.github.io/portfolio/' button type="button" class="btn btn-link"
-                            style='background-color:none'>here!</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
     <br>
 
     <div class="container">
