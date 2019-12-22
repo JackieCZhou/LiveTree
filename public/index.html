@@ -52,13 +52,17 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#" aria-labelledby="navbarDropdown">Men</a>
-                        <a class="dropdown-item" href="#">Men</a>
-                        <a class="dropdown-item" href="#">Men</a>
-                        <a class="dropdown-item" href="#">Men</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown-item" href="#">Men</li>
+                        <li class="dropdown-item" href="#">Men</li>
+                        <li class="dropdown-item" href="#">Men</li>
+                    </ul>
                         <a class="dropdown-item" href="#" aria-labelledby="navbarDropdown">Women</a>
-                        <a class="dropdown-item" href="#">Woman</a>
-                        <a class="dropdown-item" href="#">Woman</a>
-                        <a class="dropdown-item" href="#">Woman</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown-item" href="#">Woman</li>
+                        <li class="dropdown-item" href="#">Woman</li>
+                        <li class="dropdown-item" href="#">Woman</li>
+                    </ul>
                     </div>
                 </li>
             </ul>
@@ -139,7 +143,10 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-
+    <script src="js/bootnavabr.js"></script>
+    <script>
+    $("#navbar").bootnavbar();
+    </script>
 </body>
 
 </html>
