@@ -90,7 +90,7 @@
         <br>
         <input type="radio" name="age" value="mid"> Woman
         <br>
-        <button type="button" id="submit">Submit</button>
+        <button type="button" id="hide">Submit</button>
     </form>
 
 
@@ -177,6 +177,7 @@
             border: 1px solid navy;
             background: #fff;
             display: none;
+            width: 200px;
         }
     </style>
     
@@ -208,7 +209,15 @@
                 $("#form1").toggle();
             });
         });
+
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("#form1").toggle();
+            });
+        });
     </script>
+
+    
 
     </script>
 
