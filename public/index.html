@@ -73,8 +73,7 @@
             </ul>
         </div>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Add People" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add People</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="formButton">Add People</button>
         </form>
     </nav>
 
@@ -84,27 +83,14 @@
 
 
 
-    <form>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Name</label>
-            <input type="Name" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Man</label>
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Woman</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
-
-    <form action="/examples/html/action.php" method="post" id="myForm">
-        <label>Name:</label>
-        <input type="text" name="first-name">
-        <button type="button" id="submitBtn">Submit</button>
+    <form id="form1">
+        <b>Name:</b> <input type="text" name="tName">
+        <br>
+        <input type="radio" name="age" value="adolescent"> Man
+        <br>
+        <input type="radio" name="age" value="mid"> Woman
+        <br>
+        <button type="button" id="submit">Submit</button>
     </form>
 
 
@@ -202,10 +188,10 @@
             });
         });
 
-        // submit form onClick
+        // onClick button reveal form
         $(document).ready(function () {
-            $("#submitBtn").click(function () {
-                $("#myForm").submit();
+            $("#formButton").click(function () {
+                $("#form1").toggle();
             });
         });
     </script>
