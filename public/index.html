@@ -46,9 +46,11 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link active" href="https://jackieczhou.github.io/portfolio/">
-                    <button type="button" class="btn btn-primary" data-toggle="popover" title="Portfolio Link" data-content="Click here to check out my portfolio!" href="https://jackieczhou.github.io/portfolio/">Portfolio</button>
-                </a>
-            </li>
+                        <button type="button" class="btn btn-primary" data-toggle="popover" title="Portfolio Link"
+                            data-content="Click here to check out my portfolio!"
+                            href="https://jackieczhou.github.io/portfolio/">Portfolio</button>
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href=# data-toggle="dropdown">People</a>
                     <ul class="dropdown-menu">
@@ -98,6 +100,12 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
+
+    <form action="/examples/html/action.php" method="post" id="myForm">
+        <label>Name:</label>
+        <input type="text" name="first-name">
+        <button type="button" id="submitBtn">Submit</button>
+    </form>
 
 
     <!-- <div class="container">
@@ -165,14 +173,14 @@
         }
 
         .btn {
-            background-color: navy;        
+            background-color: navy;
         }
-        #button{
+
+        #button {
             background-color: none;
             border: none;
         }
     </style>
-
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -184,12 +192,20 @@
         crossorigin="anonymous"></script>
 
     <script src="js/bootnavabr.js"></script>
-    
+
     <script>
+        // hover popver
         $(document).ready(function () {
             $('[data-toggle="popover"]').popover({
                 placement: 'top',
                 trigger: 'hover'
+            });
+        });
+
+        // submit form onClick
+        $(document).ready(function () {
+            $("#submitBtn").click(function () {
+                $("#myForm").submit();
             });
         });
     </script>
@@ -197,6 +213,7 @@
     </script>
 
     <script>
+        // navbar animatio
         $("#navbar").bootnavbar();
     </script>
 </body>
