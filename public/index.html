@@ -58,11 +58,11 @@
                         <div class="sub-item">
                             <input type="checkbox" id="B-A" />
                             <label for="B-A">Men</label>
-                            <ul id="list" class="man">
+                            <ul id="list">
                                 <div class="sub-item">
                                     <input type="checkbox" id="C-A" />
                                     <label for="C-A" data-toggle="popover"
-                                        data-content="Click each name to add randomly generated numbers underneath" style="background-color: none;"><button id="mathVal" onclick="myFunction()" style="background-color: none; border:none;">Name</button></label>
+                                        data-content="Click each name to add randomly generated numbers underneath" style="background-color: none;"><button onclick="myFunction()" style="background-color: none; border:none;">Name</button></label>
                                     <ul id="mathList">
                                     </ul>
                                 </div>
@@ -87,7 +87,7 @@
                         <div class="sub-item">
                             <input type="checkbox" id="B-B" />
                             <label for="B-B">Women</label>
-                            <ul id="list" class="woman">
+                            <ul id="list">
                                 <div class="sub-item">
                                     <input type="checkbox" id="D-A" />
                                     <label for="D-A" data-toggle="popover"
@@ -137,26 +137,6 @@
         <button onClick="addLi()" id="hide"
             style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
     </form>
-
-    <script>
-
-        function addLi() {
-            var txtVal = document.getElementById("txtVal").value,
-
-                listNode = document.getElementById("list"),
-                liNode = document.createElement("LI"),
-                txtNode = document.createTextNode(txtVal);
-
-            liNode.appendChild(txtNode);
-            listNode.appendChild(liNode);
-
-            console.log("txtVal");
-        }
-
-    // onClick submit tName.push man or woman into correct spot
-
-    </script>
-
 
     <!-- Code for form that woudl have connected to firebase -->
 
@@ -288,12 +268,6 @@
 
 
 
-
-
-
-
-
-
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -306,6 +280,7 @@
 
     <script src="js/bootnavabr.js"></script>
 
+
     <script>
         // hover popver
         $(document).ready(function () {
@@ -315,6 +290,7 @@
             });
         });
     </script>
+
     <script>
         // onClick button reveal form
         $(document).ready(function () {
@@ -330,12 +306,29 @@
         });
     </script>
 
-    </script>
+<!-- script for list generation under tabs -->
+    <script>
+            function addLi() {
+                var txtVal = document.getElementById("txtVal").value,
+    
+                    listNode = document.getElementById("list"),
+                    liNode = document.createElement("LI"),
+                    txtNode = document.createTextNode(txtVal);
+    
+                liNode.appendChild(txtNode);
+                listNode.appendChild(liNode);
+    
+                console.log("txtVal");
+            }
+    
+        </script>
 
+    <!-- script for math & placement of math val -->
     <script>
         function myFunction() {
+            
             document.getElementById("mathVal").innerHTML = Math.random();
-
+            
             var mathVal = document.getElementById("mathVal").value,
 
                 listNode = document.getElementById("mathList"),
