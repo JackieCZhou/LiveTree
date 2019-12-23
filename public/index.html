@@ -65,7 +65,7 @@
                                         data-content="Click each name to add randomly generated numbers underneath"
                                         style="background-color: none;" id="mathVal"><button onclick="myFunction()"
                                             style="background-color: none; border:none;">Name</button></label>
-                                    <ul id="numList">
+                                    <ul id="newList">
                                     </ul>
                                 </div>
                                 <div class="sub-item">
@@ -341,11 +341,11 @@
         console.log(numList);
 
         function buildList() {
-            var numList = document.getElementsByName(numList[0]).value,
+            var newNum = document.getElementsByName(numList[0]).value,
 
-                listNode = document.getElementById("numList"),
+                listNode = document.getElementById("newList"),
                 liNode = document.createElement("LI"),
-                txtNode = document.createTextNode(numList);
+                txtNode = document.createTextNode(newNum);
 
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
