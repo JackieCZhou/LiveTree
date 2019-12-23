@@ -9,12 +9,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rhef="css/bootnavbar.css" rel="styles">
 </head>
 
 <body>
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script> -->
 
 
 
@@ -28,8 +28,8 @@
             messagingSenderId: "789557141134",
             appId: "1:789557141134:web:5278c226c72779633873df"
         };
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+        // Initialize Firebase
     </script> -->
 
 
@@ -238,14 +238,35 @@
             border: 1px solid navy;
 
         }
-        html,body{
+
+        html,
+        body {
             width: 100%;
             margin: 0;
-            padding:0;
-            padding:0;
+            padding: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        
+
+        .multi-level,
+        .item ul,
+        .nav input[type="checkbox"] {
+            display: none;
+        }
+
+        #menu:checked~.multi-level,
+        .item input:checked~ul {
+            display: block;
+        }
     </style>
+
+
+
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
