@@ -341,9 +341,9 @@
         console.log(numList);
 
         function buildList() {
-            var numList = document.getElementsByName("numList[0]").value,
+            var numList = document.getElementsByName(numList).value,
 
-                listNode = document.getElementsByName("numList[0]"),
+                listNode = document.getElementsByName("numList"),
                 liNode = document.createElement("LI"),
                 txtNode = document.createTextNode(numList);
 
