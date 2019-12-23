@@ -341,6 +341,7 @@
         console.log(numList);
 
         function buildList() {
+            await myFunction();
             var newNum = document.getElementsByName(numList).value,
 
                 listNode = document.getElementById("newList"),
@@ -349,6 +350,8 @@
 
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
+
+            console.log("function ran");
         }
     </script>
 
