@@ -338,14 +338,15 @@
         function myFunction() {
             document.getElementById("demo").innerHTML = Math.random();
 
-                listNode = document.getElementById("demo"),
+            var mathVal = document.getElementById("mathVal").value,
+
+                listNode = document.getElementById("list"),
                 liNode = document.createElement("LI"),
-                txtNode = document.createTextNode(txtVal);
+                txtNode = document.createTextNode(mathVal);
 
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
 
-            console.log("txtVal");
         }
     </script>
 
