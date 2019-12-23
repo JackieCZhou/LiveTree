@@ -62,7 +62,9 @@
                                 <div class="sub-item">
                                     <input type="checkbox" id="C-A" />
                                     <label for="C-A" data-toggle="popover"
-                                        data-content="Click each name to add randomly generated numbers underneath" style="background-color: none;" id="mathVal"><button onclick="myFunction()" style="background-color: none; border:none;">Name</button></label>
+                                        data-content="Click each name to add randomly generated numbers underneath"
+                                        style="background-color: none;" id="mathVal"><button onclick="myFunction()"
+                                            style="background-color: none; border:none;">Name</button></label>
                                     <ul id="numList">
                                     </ul>
                                 </div>
@@ -306,31 +308,37 @@
         });
     </script>
 
-<!-- script for list generation under tabs -->
+    <!-- script for list generation under tabs -->
     <script>
-            function addLi() {
-                var txtVal = document.getElementById("txtVal").value,
-    
-                    listNode = document.getElementById("list"),
-                    liNode = document.createElement("LI"),
-                    txtNode = document.createTextNode(txtVal);
-    
-                liNode.appendChild(txtNode);
-                listNode.appendChild(liNode);
-    
-                console.log("txtVal");
-            }
-    
-        </script>
+        function addLi() {
+            var txtVal = document.getElementById("txtVal").value,
+
+                listNode = document.getElementById("list"),
+                liNode = document.createElement("LI"),
+                txtNode = document.createTextNode(txtVal);
+
+            liNode.appendChild(txtNode);
+            listNode.appendChild(liNode);
+
+            console.log("txtVal");
+        }
+
+    </script>
 
     <!-- script for math & placement of math val -->
     <script>
         function myFunction() {
-            var numList=[];
-            document.getElementById("mathVal").innerHTML = Math.random();
-            numList.push("mathVal");
+            Math.floor(Math.random() * (max - min)) + min;
+        }
+        function pushRandNum(num) {
+            var numList = [];
+            for (var i = 0; i < num; i++) {
+                ints.push(pushRandNum(1, 91));
+            }
+            console.log(numList);
+        }
 
-            
+        function buildList() {
             var numList = document.getElementById("numList").value,
 
                 listNode = document.getElementById("numList"),
