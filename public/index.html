@@ -58,7 +58,7 @@
                         <div class="sub-item">
                             <input type="checkbox" id="B-A" />
                             <label for="B-A">Men</label>
-                            <ul>
+                            <ul id="list">
                                 <div class="sub-item">
                                     <input type="checkbox" id="C-A" />
                                     <label for="C-A" data-toggle="popover"
@@ -133,15 +133,30 @@
     <form id="form1">
         <b>Type in a name and select Man or Woman to add them to the list</b>
         <br>
-        <b>Name:</b> <input type="text" name="tName">
+        <b>Name:</b> <input type="text" name="tName" id="tName">
         <br>
-        <input type="radio" name="age" value="adolescent"> Man
+        <input type="radio" name="man" value="man" id="man"> Man
         <br>
-        <input type="radio" name="age" value="mid"> Woman
+        <input type="radio" name="woman" value="woman" id="woman"> Woman
         <br>
-        <button type="button" id="hide" style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
+        <button onClick="addPeople()" type="button" id="hide" style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
     </form>
 
+
+    <script>
+
+    function addPeople(){
+        var tName = document.getElementById("tName"),
+        listNode = document.getElementById("list"),
+        liNode = document.createElement("LI"),
+        txtNode = document.createTextNode(tName);
+ 
+        liNode.appendChild(txtNode);
+        listNode.appendChild(liNode);
+    }
+    // onClick submit tName.push man or woman into correct spot
+
+    </script>
 
 
     <!-- Code for form that woudl have connected to firebase -->
