@@ -332,10 +332,10 @@
         function myFunction() {
             var rnd = Math.floor(Math.random() * 1000000000);
             document.getElementById('mathVal').value = rnd;
-            numList.push('mathVal');
+            numList.push(rnd);
 
             console.log(numList);
-            
+
             buildList();
         }
         console.log(numList);
