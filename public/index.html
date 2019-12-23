@@ -58,7 +58,7 @@
                         <div class="sub-item">
                             <input type="checkbox" id="B-A" />
                             <label for="B-A">Men</label>
-                            <ul id="list">
+                            <ul id="list" id="man">
                                 <div class="sub-item">
                                     <input type="checkbox" id="C-A" />
                                     <label for="C-A" data-toggle="popover"
@@ -88,7 +88,7 @@
                         <div class="sub-item">
                             <input type="checkbox" id="B-B" />
                             <label for="B-B">Women</label>
-                            <ul>
+                            <ul id="list" id="woman">
                                 <div class="sub-item">
                                     <input type="checkbox" id="D-A" />
                                     <label for="D-A" data-toggle="popover"
@@ -139,13 +139,13 @@
         <br>
         <input type="radio" name="woman" value="woman" id="woman"> Woman
         <br>
-        <button onClick="addLi()" id="hide" style="background-culor:navy; culor:white; margin-left: 37%;">Submit</button>
+        <button onClick="addLi()" id="hide" style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
     </form>
 
     <script>
 
     function addLi(){
-        var txtVal = document.getElementById("txtVal").value,
+        var txtVal = document.getElementById("txtVal", "man", "woman").value,
         listNode = document.getElementById("list"),
         liNode = document.createElement("LI"),
         txtNode = document.createTextNode(txtVal);
