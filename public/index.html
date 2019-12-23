@@ -341,7 +341,7 @@
         console.log(numList);
 
         function buildList() {
-            var numList = document.getElementById("numList").value,
+            var numList = document.getElementByName("numList[0]").value,
 
                 listNode = document.getElementById("numList"),
                 liNode = document.createElement("LI"),
@@ -349,8 +349,6 @@
 
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
-
-            console.log(numList);
         }
     </script>
 
