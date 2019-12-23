@@ -56,11 +56,12 @@
                     <li><a href="#">Brand</a></li>
                 </ul>
             </div>
-            <div class="item" style="margin-left: 20px;">
+            <div class="item" style="margin-left: 25px;">
                 <input type="checkbox" id="B" />
                 <label for="B">People</label>
                 <ul>
-                    <li><div class="sub-item">
+                    <li>
+                        <div class="sub-item">
                             <input type="checkbox" id="B-A" />
                             <label for="B-A">Men</label>
                             <ul>
@@ -68,8 +69,10 @@
                                 <li><a href="#">Name</a></li>
                                 <li><a href="#">Name</a></li>
                             </ul>
-                        </div></li>
-                    <li><div class="sub-item">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sub-item">
                             <input type="checkbox" id="B-B" />
                             <label for="B-B">Women</label>
                             <ul>
@@ -77,13 +80,15 @@
                                 <li><a href="#">Name</a></li>
                                 <li><a href="#">Name</a></li>
                             </ul>
-                        </div></li>
+                        </div>
+                    </li>
                     <li>
                         <div class="item">
                             <input type="checkbox" id="C" />
                             <label for="C">
                                 <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button"
-                                        id="formButton">Add People</form></label>
+                                        id="formButton">Add People</form>
+                            </label>
                         </div>
                     </li>
                 </ul>
@@ -92,9 +97,7 @@
     </div>
 
     </div>
-
-
-    <br><br><br><br><br>
+    <br>
 
     <form id="form1">
         <b style="text-align: center;">Type in a name and select Man or Woman to add them to the list</b>
@@ -219,13 +222,14 @@
         .item input:checked~ul {
             display: block;
         }
-        #hide{
-            background-color:navy;
-            color:white;
-            margin-left:0;
+
+        #hide {
+            background-color: navy;
+            color: white;
+            margin-left: 0;
         }
 
-        .nav{
+        .nav {
             margin: 50px;
         }
     </style>
