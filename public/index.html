@@ -58,11 +58,12 @@
                         <div class="sub-item">
                             <input type="checkbox" id="B-A" />
                             <label for="B-A">Men</label>
-                            <ul id="list" id="man">
+                            <ul id="list" class="man">
                                 <div class="sub-item">
                                     <input type="checkbox" id="C-A" />
                                     <label for="C-A" data-toggle="popover"
-                                        data-content="Click each name to add randomly generated numbers underneath">Name</label>
+                                        data-content="Click each name to add randomly generated numbers underneath"><button id="demo" onclick="myFunction()">Name</button></label>
+                                        
                                     <ul>
                                         <li><a>123</a></li>
                                     </ul>
@@ -88,7 +89,7 @@
                         <div class="sub-item">
                             <input type="checkbox" id="B-B" />
                             <label for="B-B">Women</label>
-                            <ul id="list" id="woman">
+                            <ul id="list" class="woman">
                                 <div class="sub-item">
                                     <input type="checkbox" id="D-A" />
                                     <label for="D-A" data-toggle="popover"
@@ -135,26 +136,24 @@
         <br>
         <b>Name:</b><input type="text" id="txtVal">
         <br>
-        <input type="radio" name="man" value="man" id="man"> Man
-        <br>
-        <input type="radio" name="woman" value="woman" id="woman"> Woman
-        <br>
-        <button onClick="addLi()" id="hide" style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
+        <button onClick="addLi()" id="hide"
+            style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
     </form>
 
     <script>
 
-    function addLi(){
-        var txtVal = document.getElementById("txtVal", "man", "woman").value,
-        listNode = document.getElementById("list"),
-        liNode = document.createElement("LI"),
-        txtNode = document.createTextNode(txtVal);
- 
-        liNode.appendChild(txtNode);
-        listNode.appendChild(liNode);
+        function addLi() {
+            var txtVal = document.getElementById("txtVal").value,
 
-        console.log("txtVal");
-    }
+                listNode = document.getElementById("list"),
+                liNode = document.createElement("LI"),
+                txtNode = document.createTextNode(txtVal);
+
+            liNode.appendChild(txtNode);
+            listNode.appendChild(liNode);
+
+            console.log("txtVal");
+        }
 
     // onClick submit tName.push man or woman into correct spot
 
@@ -333,14 +332,23 @@
         });
     </script>
 
-
-
     </script>
 
     <script>
-        // navbar animation
-        $("#navbar").bootnavbar();
+        function myFunction() {
+            document.getElementById("demo").innerHTML = Math.random();
+
+                listNode = document.getElementById("demo"),
+                liNode = document.createElement("LI"),
+                txtNode = document.createTextNode(txtVal);
+
+            liNode.appendChild(txtNode);
+            listNode.appendChild(liNode);
+
+            console.log("txtVal");
+        }
     </script>
+
 </body>
 
 </html>
