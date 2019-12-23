@@ -327,16 +327,18 @@
 
     <!-- script for math & placement of math val -->
     <script>
+        var numList = [];
+
         function myFunction() {
-            Math.floor(Math.random() * (1 - 100)) + 1;
-        }
-        function pushRandNum(num) {
-            var numList = [];
-            for (var i = 0; i < num; i++) {
-                numList.push(pushRandNum(1, 100));
-            }
+            var rnd = Math.floor(Math.random() * 1000000000);
+            document.getElementById('mathVal').value = rnd;
+            numList.push('mathVal');
+
             console.log(numList);
+            
+            buildList();
         }
+        console.log(numList);
 
         function buildList() {
             var numList = document.getElementById("numList").value,
