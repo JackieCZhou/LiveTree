@@ -58,7 +58,7 @@
                         <div class="sub-item">
                             <input type="checkbox" id="B-A" />
                             <label for="B-A">Men</label>
-                            <ul>
+                            <ul id="list">
                                 <div class="sub-item">
                                     <input type="checkbox" id="C-A" />
                                     <label for="C-A" data-toggle="popover"
@@ -145,14 +145,10 @@
     <input type="text" id="txtVal">
     <button onClick="addLi()">Submit</button>
 
-    <ul id="list">
-        <li>name</li>
-    </ul>
-
     <script>
 
     function addLi(){
-        var txtVal = document.getElementById("txtVal"),
+        var txtVal = document.getElementById("txtVal").value,
         listNode = document.getElementById("list"),
         liNode = document.createElement("LI"),
         txtNode = document.createTextNode(txtVal);
@@ -162,6 +158,7 @@
 
         console.log("txtVal");
     }
+
     // onClick submit tName.push man or woman into correct spot
 
     </script>
