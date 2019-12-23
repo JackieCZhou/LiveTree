@@ -330,14 +330,14 @@
         var numList = [];
 
         function myFunction() {
-            var rnd = Math.floor(Math.random() * 1000000000);
+            var rnd = Math.floor(Math.random() + 1);
             document.getElementById('mathVal').value = rnd;
             numList.push(rnd);
 
             console.log(numList);
-
             buildList();
         }
+
         console.log(numList);
 
         function buildList() {
