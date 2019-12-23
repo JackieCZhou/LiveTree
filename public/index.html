@@ -63,7 +63,7 @@
                                     <input type="checkbox" id="C-A" />
                                     <label for="C-A" data-toggle="popover"
                                         data-content="Click each name to add randomly generated numbers underneath" style="background-color: none;" id="mathVal"><button onclick="myFunction()" style="background-color: none; border:none;">Name</button></label>
-                                    <ul id="mathList">
+                                    <ul id="numList">
                                     </ul>
                                 </div>
                                 <div class="sub-item">
@@ -326,14 +326,16 @@
     <!-- script for math & placement of math val -->
     <script>
         function myFunction() {
-            
+            var numList=[];
             document.getElementById("mathVal").innerHTML = Math.random();
-            
-            var mathVal = document.getElementById("mathVal").value,
+            mathVal.push(numList);
 
-                listNode = document.getElementById("mathList"),
+            
+            var numList = document.getElementById("numList").value,
+
+                listNode = document.getElementById("numList"),
                 liNode = document.createElement("LI"),
-                txtNode = document.createTextNode(mathVal);
+                txtNode = document.createTextNode(numList);
 
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
