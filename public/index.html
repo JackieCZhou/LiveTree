@@ -342,7 +342,9 @@
         console.log(numList);
 
         function buildList() {
-            var newNum = document.getElementsByName(numList).value,
+            newNum.setAttribute("name", "anyNumber");
+            var newNum = document.getElementsByName("anyNumber")[0].value,
+
 
                 listNode = document.getElementById("newList"),
                 liNode = document.createElement("LI"),
