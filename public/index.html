@@ -329,8 +329,6 @@
     <script>
         var numList = [];
         
-        $(numList.attr("name", "answer"));
-
         function myFunction() {
             var rnd = Math.floor(Math.random() * 10);
             document.getElementById('mathVal').value = rnd;
@@ -346,7 +344,7 @@
 
 
         function buildList() {
-            var newNum = document.getElementsByName("answer"[0]).number,
+            var newNum = document.getElementsByName(numList[0]).number,
 
 
                 listNode = document.getElementById("newList"),
