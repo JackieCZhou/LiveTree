@@ -335,16 +335,17 @@
             numList.push(rnd);
 
             console.log(numList);
-
+            
             buildList();
         }
 
-        console.log(numList); //Working
+        console.log(numList);
 
         function buildList() {
-            var newNum = document.getElementsByName(numList)[0],
+            numList.setAttribute("name", "answer");
+            var newNum = document.getElementsByName("answer"[0]).number,
 
-
+            
                 listNode = document.getElementById("newList"),
                 liNode = document.createElement("LI"),
                 txtNode = document.createTextNode(newNum);
@@ -352,7 +353,8 @@
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
 
-            console.log(newNum); //Not Working
+            console.log(newNum);
+        }
     </script>
 
 </body>
