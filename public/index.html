@@ -339,11 +339,11 @@
             buildList();
         }
 
-        console.log(numList);
+        console.log(numList); //Working
 
         function buildList() {
             numList.setAttribute("name", "anyNumber");
-            var newNum = document.getElementsByName("anyNumber")[0].value,
+            var newNum = document.getElementsByName("anyNumber")[0].number,
 
 
                 listNode = document.getElementById("newList"),
@@ -353,8 +353,7 @@
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
 
-            console.log(newNum);
-        }
+            console.log(newNum); //Not Working
     </script>
 
 </body>
