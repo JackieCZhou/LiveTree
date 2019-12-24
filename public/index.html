@@ -335,15 +335,14 @@
             numList.push(rnd);
 
             console.log(numList);
-            
+
             buildList();
         }
 
         console.log(numList); //Working
 
         function buildList() {
-            numList.setAttribute("name", "anyNumber");
-            var newNum = document.getElementsByName("anyNumber")[0].number,
+            var newNum = document.getElementsByName(numList)[0],
 
 
                 listNode = document.getElementById("newList"),
