@@ -116,6 +116,36 @@
                         </div>
                     </li>
                     <li>
+                            <div class="sub-item">
+                                <input type="checkbox" id="B-B" />
+                                <label for="B-B">Pets</label>
+                                <ul id="list">
+                                    <div class="sub-item">
+                                        <input type="checkbox" id="D-A" />
+                                        <label for="D-A" data-toggle="popover"
+                                            data-content="Click each name to add randomly generated numbers underneath">Name</label>
+                                        <ul>
+                                            <li><a>35</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="sub-item">
+                                        <input type="checkbox" id="D-B" />
+                                        <label for="D-B">Name</label>
+                                        <ul>
+                                            <li><a>19</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="sub-item">
+                                        <input type="checkbox" id="D-C" />
+                                        <label for="D-C">Name</label>
+                                        <ul>
+                                            <li><a>26</a></li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </div>
+                        </li>
+                    <li>
                         <div class="item">
                             <input type="checkbox" id="C" />
                             <label for="C">
@@ -321,7 +351,7 @@
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
 
-            console.log("txtVal");
+            console.log("txtVal");  // was working before I began adding random math function, will get back to once that it working.  Won't stop reloading pg
         }
 
     </script>
