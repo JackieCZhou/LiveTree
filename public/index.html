@@ -146,55 +146,13 @@
     </div>
 
     <form id="form1">
-        <b>Type in a name and select Man or Woman to add them to the list</b>
+        <b>Type in a name and lick submit to add to the list</b>
         <br>
         <b>Name:</b><input type="text" id="txtVal">
         <br>
         <button onClick="addLi()" id="hide"
             style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
     </form>
-
-    <!-- HTML for form that would have connected to firebase -->
-
-    <!-- <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="color:navy;">Name</th>
-                                <th scope="col" style="color:navy;">Fans</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <br>
-            <form>
-                
-            <h2>Add People</h2>
-            <div class="form" style="border:2px solid navy;">
-                
-            </div>
-            <div class="form-group">
-                <label for="personadd">Name</label>
-                <input type="text" class="form-control" id="name-input" placeholder="Name">
-            </div>
-            <div class="form-group">
-                <label for="personadd">Fans</label>
-                <input type="number" class="form-control" id="fans-input" placeholder="Fans">
-            </div>
-        </form>
-        
-        <button type="button" style="color:navy;" class="btn border-secondary" id="submit">Submit</button>
-    </div>
-</div>
-<br> -->
-    <!-- <button class="btn my-2 my-sm-0" type="button" id="formButton">Add People</button> -->
-
-
 
 
     </div>
@@ -255,32 +213,30 @@
             console.log(numList);
 
             buildList();
-        }
 
 
-        console.log(numList);
+            console.log(numList);
 
+            function buildList() {
+                arr.forEach(function (num, [0], numList)) {
 
-        function buildList() {
-            arr.forEach(function (num, [0], numList)) {
+                    var newNum = document.getElementsByName("numList"[0]),
 
-                var newNum = document.getElementsByName("numList"[0]),
+                        listNode = document.getElementById("newList"),
+                        liNode = document.createElement("LI"),
+                        txtNode = document.createTextNode(newNum);
 
-                    listNode = document.getElementById("newList"),
-                    liNode = document.createElement("LI"),
-                    txtNode = document.createTextNode(newNum);
+                    liNode.appendChild(txtNode);
+                    listNode.appendChild(liNode);
+                }
 
-                liNode.appendChild(txtNode);
-                listNode.appendChild(liNode);
+                console.log(newNum);
             }
-
-            console.log(newNum);
         }
     </script>
 
-    <script type="text/javascript" src="app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -295,7 +251,56 @@
 
     <script src="js/bootnavabr.js"></script>
 
-//     <script src="./forms.js" type="formAndMathFunctions"></script>
+    //
+    //
+    <script src="./forms.js" type="formAndMathFunctions"></script>
 </body>
 
 </html>
+
+
+
+
+//
+<!-- HTML for form that would have connected to firebase -->
+
+//
+<!-- <div class="container">
+//         <div class="row">
+//             <div class="col-12">
+//                 <table class="table">
+//                     <thead>
+//                         <tr>
+//                             <th scope="col" style="color:navy;">Name</th>
+//                             <th scope="col" style="color:navy;">Fans</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody id="table">
+//                     </tbody>
+//                 </table>
+//             </div>
+//         </div>
+//         <br>
+//         <form>
+            
+//         <h2>Add People</h2>
+//         <div class="form" style="border:2px solid navy;">
+            
+//         </div>
+//         <div class="form-group">
+//             <label for="personadd">Name</label>
+//             <input type="text" class="form-control" id="name-input" placeholder="Name">
+//         </div>
+//         <div class="form-group">
+//             <label for="personadd">Fans</label>
+//             <input type="number" class="form-control" id="fans-input" placeholder="Fans">
+//         </div>
+//     </form>
+    
+//     <button type="button" style="color:navy;" class="btn border-secondary" id="submit">Submit</button>
+// </div>
+// </div>
+// <br> -->
+//
+//
+<!-- <button class="btn my-2 my-sm-0" type="button" id="formButton">Add People</button> -->
