@@ -172,10 +172,42 @@
 
     <script src="js/bootnavabr.js"></script>
 
+    <script>
+        var numList = [];
 
+        function myFunction() {
+            var rnd = Math.floor(Math.random() * 10);
+            document.getElementById('mathVal').value = rnd;
+            numList.push(rnd);
+
+            console.log(numList);
+
+            buildList();
+        }
+
+    </script>
 
     <script>
-        // hover popver
+
+        function buildList() {
+            arr.forEach(function (num, [0], numList)) {
+
+                var newNum = document.getElementsByName("numList"[0]),
+
+                    listNode = document.getElementById("newList"),
+                    liNode = document.createElement("LI"),
+                    txtNode = document.createTextNode(newNum);
+
+                liNode.appendChild(txtNode);
+                listNode.appendChild(liNode);
+            }
+
+            console.log(newNum);
+        }
+    </script>
+
+    // hover popver
+    <script>
         $(document).ready(function () {
             $('[data-toggle="popover"]').popover({
                 placement: 'top',
@@ -184,14 +216,14 @@
         });
     </script>
 
+    // onClick button reveal/hide form
     <script>
-        // onClick button reveal form
         $(document).ready(function () {
             $("#formButton").click(function () {
                 $("#form1").toggle();
             });
         });
-        // onClick Submit hide form
+
         $(document).ready(function () {
             $("#hide").click(function () {
                 $("#form1").toggle();
@@ -199,7 +231,7 @@
         });
     </script>
 
-    <!-- script for list generation under tabs -->
+    //<!-- script for list generation under tabs -->
     <script>
         function addLi() {
             e.preventDefault();
@@ -217,42 +249,8 @@
 
     </script>
 
-    <!-- script for math & placement of math val -->
-    <script>
-        var numList = [];
-
-        function myFunction() {
-            var rnd = Math.floor(Math.random() * 10);
-            document.getElementById('mathVal').value = rnd;
-            numList.push(rnd);
-
-            console.log(numList);
-
-            buildList();
-
-
-            console.log(numList);
-
-            function buildList() {
-                arr.forEach(function (num, [0], numList)) {
-
-                    var newNum = document.getElementsByName("numList"[0]),
-
-                        listNode = document.getElementById("newList"),
-                        liNode = document.createElement("LI"),
-                        txtNode = document.createTextNode(newNum);
-
-                    liNode.appendChild(txtNode);
-                    listNode.appendChild(liNode);
-                }
-
-                console.log(newNum);
-            }
-        }
-    </script>
-
-
-    //<script src="./forms.js" type="formAndMathFunctions"></script>
+    //
+    <script src="./forms.js" type="formAndMathFunctions"></script>
 </body>
 
 </html>
@@ -261,10 +259,12 @@
 
 
 //
-//<!-- HTML for form that would have connected to firebase -->
+//
+<!-- HTML for form that would have connected to firebase -->
 
 //
-//<!-- <div class="container">
+//
+<!-- <div class="container">
 //         <div class="row">
 //             <div class="col-12">
 //                 <table class="table">
@@ -301,4 +301,5 @@
 // </div>
 // <br> -->
 //
-//<!-- <button class="btn my-2 my-sm-0" type="button" id="formButton">Add People</button> -->
+//
+<!-- <button class="btn my-2 my-sm-0" type="button" id="formButton">Add People</button> -->
