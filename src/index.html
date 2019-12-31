@@ -11,26 +11,11 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link rhef="css/bootnavbar.css" rel="styles">
+    <link href="css/bootnavbar.css" rel="styles">
+    <link href="../public/style.css" rel="stylesheet">
 </head>
 
 <body>
-
-
-
-    <!-- <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyAG-qx615hR4eDgP1DAmPKhw0Js-o-DFyM",
-            authDomain: "livetree-65129.firebaseapp.com",
-            databaseURL: "https://livetree-65129.firebaseio.com/",
-            projectId: "livetree-65129",
-            storageBucket: "livetree-65129.appspot.com",
-            messagingSenderId: "789557141134",
-            appId: "1:789557141134:web:5278c226c72779633873df"
-        };
-        firebase.initializeApp(firebaseConfig);
-        // Initialize Firebase
-    </script> -->
 
 
 
@@ -116,35 +101,35 @@
                         </div>
                     </li>
                     <li>
-                            <div class="sub-item">
-                                <input type="checkbox" id="B-C" />
-                                <label for="B-C">Pets</label>
-                                <ul id="list">
-                                    <div class="sub-item">
-                                        <input type="checkbox" id="E-A" />
-                                        <label for="E-A" data-toggle="popover"
-                                            data-content="Click each name to add randomly generated numbers underneath">Name</label>
-                                        <ul>
-                                            <li><a>35</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="sub-item">
-                                        <input type="checkbox" id="E-B" />
-                                        <label for="E-B">Name</label>
-                                        <ul>
-                                            <li><a>19</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="sub-item">
-                                        <input type="checkbox" id="E-C" />
-                                        <label for="E-C">Name</label>
-                                        <ul>
-                                            <li><a>26</a></li>
-                                        </ul>
-                                    </div>
-                                </ul>
-                            </div>
-                        </li>
+                        <div class="sub-item">
+                            <input type="checkbox" id="B-C" />
+                            <label for="B-C">Pets</label>
+                            <ul id="list">
+                                <div class="sub-item">
+                                    <input type="checkbox" id="E-A" />
+                                    <label for="E-A" data-toggle="popover"
+                                        data-content="Click each name to add randomly generated numbers underneath">Name</label>
+                                    <ul>
+                                        <li><a>35</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-item">
+                                    <input type="checkbox" id="E-B" />
+                                    <label for="E-B">Name</label>
+                                    <ul>
+                                        <li><a>19</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-item">
+                                    <input type="checkbox" id="E-C" />
+                                    <label for="E-C">Name</label>
+                                    <ul>
+                                        <li><a>26</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
                     <li>
                         <div class="item">
                             <input type="checkbox" id="C" />
@@ -170,7 +155,7 @@
             style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
     </form>
 
-    <!-- Code for form that woudl have connected to firebase -->
+    <!-- HTML for form that would have connected to firebase -->
 
     <!-- <div class="container">
         <div class="row">
@@ -217,7 +202,7 @@
     <script type="text/javascript" src="app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-
+<!-- 
     <style>
         h1 {
             font-size: 75px;
@@ -296,7 +281,7 @@
         a {
             color: black;
         }
-    </style>
+    </style> -->
 
 
 
@@ -375,14 +360,17 @@
 
 
         function buildList() {
-            var newNum = document.getElementsByName("numList"[0]),
+            arr.forEach(function (num, [0)], numList)) {
 
-                listNode = document.getElementById("newList"),
-                liNode = document.createElement("LI"),
-                txtNode = document.createTextNode(newNum);
+                var newNum = document.getElementsByName("numList"[0]),
 
-            liNode.appendChild(txtNode);
-            listNode.appendChild(liNode);
+                    listNode = document.getElementById("newList"),
+                    liNode = document.createElement("LI"),
+                    txtNode = document.createTextNode(newNum);
+
+                liNode.appendChild(txtNode);
+                listNode.appendChild(liNode);
+            }
 
             console.log(newNum);
         }
