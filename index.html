@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linking Heroku</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="css/bootnavbar.css" rel="styles">
+    <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAG-qx615hR4eDgP1DAmPKhw0Js-o-DFyM",
+            authDomain: "livetree-65129.firebaseapp.com",
+            databaseURL: "https://livetree-65129.firebaseio.com",
+            projectId: "livetree-65129",
+            storageBucket: "livetree-65129.appspot.com",
+            messagingSenderId: "789557141134",
+            appId: "1:789557141134:web:5278c226c72779633873df"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+    <h1>Live-updating Tree View</h1>
+    <br>
+
+    <div class="nav">
+        <input type="checkbox" id="menu">
+        <label for="menu">&#9776;</label>
+
+        <div class="milti-level">
+            <div class="item">
+                <input type="checkbox" id="A">
+                <a class="nav-link active" href="https://jackieczhou.github.io/portfolio/">
+                    <button type="button" class="btn" data-toggle="popover" title="Portfolio Link"
+                        data-content="Click here to check out my portfolio!"
+                        href="https://jackieczhou.github.io/portfolio/">Portfolio</button>
+                </a>
+            </div>
+            <div class="item" style="margin-left: 28px;">
+                <input type="checkbox" id="B" />
+                <label for="B">Categories</label>
+                <ul>
+                    <li>
+                        <div class="sub-item">
+                            <input type="checkbox" id="B-A" />
+                            <label for="B-A">Men</label>
+                            <ul id="list1">
+                                <div class="sub-item">
+                                    <input type="checkbox" id="C-A" />
+                                    <label for="C-A" data-toggle="popover"
+                                        data-content="Click each name to add randomly generated numbers underneath"
+                                        style="background-color: none;" id="mathVal"><button onclick="myFunction()"
+                                            style="background: inherit; border:none;">Name</button></label>
+                                    <ul id="newList">
+                                    </ul>
+                                </div>
+                                <div class="sub-item">
+                                    <input type="checkbox" id="C-B" />
+                                    <label for="C-B">Name</label>
+                                    <ul>
+                                        <li><a>47</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-item">
+                                    <input type="checkbox" id="C-C" />
+                                    <label for="C-C">Name</label>
+                                    <ul>
+                                        <li><a>29</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sub-item">
+                            <input type="checkbox" id="B-B" />
+                            <label for="B-B">Women</label>
+                            <ul id="list">
+                                <div class="sub-item">
+                                    <input type="checkbox" id="D-A" />
+                                    <label for="D-A" data-toggle="popover"
+                                        data-content="Click each name to add randomly generated numbers underneath">Name</label>
+                                    <ul>
+                                        <li><a>35</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-item">
+                                    <input type="checkbox" id="D-B" />
+                                    <label for="D-B">Name</label>
+                                    <ul>
+                                        <li><a>19</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-item">
+                                    <input type="checkbox" id="D-C" />
+                                    <label for="D-C">Name</label>
+                                    <ul>
+                                        <li><a>26</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sub-item">
+                            <input type="checkbox" id="B-C" />
+                            <label for="B-C">Pets</label>
+                            <ul id="list">
+                                <div class="sub-item">
+                                    <input type="checkbox" id="E-A" />
+                                    <label for="E-A" data-toggle="popover"
+                                        data-content="Click each name to add randomly generated numbers underneath">Name</label>
+                                    <ul>
+                                        <li><a>35</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-item">
+                                    <input type="checkbox" id="E-B" />
+                                    <label for="E-B">Name</label>
+                                    <ul>
+                                        <li><a>19</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-item">
+                                    <input type="checkbox" id="E-C" />
+                                    <label for="E-C">Name</label>
+                                    <ul>
+                                        <li><a>26</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <input type="checkbox" id="C" />
+                            <label for="C">
+                                <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button"
+                                        id="formButton">Add</form>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <form id="form1">
+        <b>Type in a name and lick submit to add to the list</b>
+        <br>
+        <b>Name:</b><input type="text" id="txtVal">
+        <br>
+        <button onClick="addLi()" id="hide"
+            style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
+    </form>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="js/bootnavabr.js"></script>
+
+    <script>
+        var numList = [];
+
+        function myFunction() {
+            var rnd = Math.floor(Math.random() * 10);
+            document.getElementById('mathVal').value = rnd;
+            numList.push(rnd);
+
+            console.log(numList);
+
+            buildList();
+        }
+
+
+        function buildList() {
+
+            var newNum = document.getElementsByName("numList"[0]),
+
+                listNode = document.getElementById("newList"),
+                liNode = document.createElement("LI"),
+                txtNode = document.createTextNode(newNum);
+
+            liNode.appendChild(txtNode);
+            listNode.appendChild(liNode);
+
+            console.log(newNum);
+        }
+
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover({
+                placement: 'top',
+                trigger: 'hover'
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#formButton").click(function () {
+                $("#form1").toggle();
+            });
+        });
+
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("#form1").toggle();
+            });
+        });
+    </script>
+
+    <!-- script for list generation under tabs -->
+    <script>
+        function addLi() {
+            e.preventDefault();
+            var txtVal = document.getElementById("txtVal").value,
+
+                listNode = document.getElementById("list"),
+                liNode = document.createElement("LI"),
+                txtNode = document.createTextNode(txtVal);
+
+            liNode.appendChild(txtNode);
+            listNode.appendChild(liNode);
+
+            console.log("txtVal");  // was working before I began adding random math function, will get back to once that it working.  Won't stop reloading pg
+        }
+
+    </script>
+
+    <script src="./forms.js" type="formAndMathFunctions"></script>
+</body>
+
+</html>
+
+
+
+
+<!-- HTML for form that would have connected to firebase -->
+
+<!-- <div class="container">
+//         <div class="row">
+//             <div class="col-12">
+//                 <table class="table">
+//                     <thead>
+//                         <tr>
+//                             <th scope="col" style="color:navy;">Name</th>
+//                             <th scope="col" style="color:navy;">Fans</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody id="table">
+//                     </tbody>
+//                 </table>
+//             </div>
+//         </div>
+//         <br>
+//         <form>
+            
+//         <h2>Add People</h2>
+//         <div class="form" style="border:2px solid navy;">
+            
+//         </div>
+//         <div class="form-group">
+//             <label for="personadd">Name</label>
+//             <input type="text" class="form-control" id="name-input" placeholder="Name">
+//         </div>
+//         <div class="form-group">
+//             <label for="personadd">Fans</label>
+//             <input type="number" class="form-control" id="fans-input" placeholder="Fans">
+//         </div>
+//     </form>
+    
+//     <button type="button" style="color:navy;" class="btn border-secondary" id="submit">Submit</button>
+// </div>
+// </div>
+// <br> <!-- <button class="btn my-2 my-sm-0" type="button" id="formButton">Add People</button> -->
