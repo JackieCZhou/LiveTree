@@ -8,15 +8,17 @@ document.addEventListener("DOMContentLoaded", event => {
 
     myPost.onSnapshot(doc => {
         const data = doc.data();
-        document.write(data.Chang + data.Fans + '<br>')
+        document.write("Name: " + data.Name + '<br>' + "Fans: " + data.Fans + '<br>')
     })
     allInfo.onSnapshot(doc => {
         const data = doc.data();
-        document.write(data.Fans + '<br>')
+        document.write("Name: " + data.Name + '<br>' + "Fans: " + data.Fans + '<br>')
     })
 
 
 });
+
+
 
 function googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
