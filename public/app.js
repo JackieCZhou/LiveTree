@@ -1,14 +1,38 @@
+window.prompt();
+
+var login = prompt("Login With Google First!")
+
+if (person == null || person == "") {
+    txt = "Login Cancelled.";
+} else {
+    txt = "Hello " + person + "! Welcome to my page";
+}
+
+
 document.addEventListener("DOMContentLoaded", event => {
+
     const app = firebase.app();
+    console.log(app);
 
     const db = firebase.firestore();
 
+    const peopleRef = db.collection('women');
+    const query = peopleRef.where('name', "Jackie");
+
     const myPost = db.collection('women').doc("Jackie");
     const allInfo = db.collection('men').doc("Chang");
+    
+    query.get()
+        .then(products => {
+            products.forEach(doc => {
+                data = doc.data()
+                document.write('${data.name}' + '<br>')
+            })
+        })
 
     myPost.onSnapshot(doc => {
         const data = doc.data();
-        document.write("Name: " + data.Name + '<br>' + "Fans: " + data.Fans + '<br>')
+        document.querySelector('#title').innerHTML = data.title
     })
     allInfo.onSnapshot(doc => {
         const data = doc.data();
@@ -18,7 +42,15 @@ document.addEventListener("DOMContentLoaded", event => {
 
 });
 
+//edit name function
 
+function updatePost(e) {
+    const db = firebase.firestore();
+    const myPost = db.collection("women").doc('Jackie');
+    myPost.update({ Name: e.target.value })
+}
+
+//Google login setup
 
 function googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -27,7 +59,7 @@ function googleLogin() {
 
         .then(result => {
             const user = result.user;
-            document.write('Hello ${ user.displayName }');
+            document.write('Hello ${user.displayName}');
             console.log(user)
         })
         .catch(console.log)
@@ -51,12 +83,14 @@ function addLi() {
 
 
 // onHover function
+
 $(document).ready(function () {
     $('[data-toggle="popover"]').popover({
         placement: 'top',
         trigger: 'hover'
     });
 });
+
 
 // hide/reveal form onClick
 $(document).ready(function () {
