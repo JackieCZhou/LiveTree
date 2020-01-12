@@ -1,0 +1,29 @@
+[debug] [2020-01-12T16:24:54.657Z] ----------------------------------------------------------------------
+[debug] [2020-01-12T16:24:54.662Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-12T16:24:54.663Z] CLI Version:   7.11.0
+[debug] [2020-01-12T16:24:54.663Z] Platform:      darwin
+[debug] [2020-01-12T16:24:54.663Z] Node Version:  v10.15.3
+[debug] [2020-01-12T16:24:54.675Z] Time:          Sun Jan 12 2020 11:24:54 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-12T16:24:54.675Z] ----------------------------------------------------------------------
+[debug] [2020-01-12T16:24:54.675Z] 
+[debug] [2020-01-12T16:24:54.697Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-12T16:24:54.698Z] > authorizing via signed-in user
+[debug] [2020-01-12T16:24:54.698Z] [iam] checking project livetree-65129 for permissions ["firebase.projects.get"]
+[debug] [2020-01-12T16:24:54.702Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-12T16:24:54.702Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-12T16:24:59.707Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-12T16:24:59.714Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/livetree-65129:testIamPermissions  
+
+[debug] [2020-01-12T16:25:00.002Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-12T16:25:00.004Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/livetree-65129  
+ 
+[debug] [2020-01-12T16:25:01.304Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/jackiedavison/Desktop/LiveTree'...
+[info] 
+[debug] [2020-01-12T16:25:01.309Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/livetree-65129/webApps/-/config  
+ 
+[debug] [2020-01-12T16:25:02.788Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000

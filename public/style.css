@@ -16,10 +16,16 @@ h1 {
     color: white;
 }
 
+#loadPeople{
+    list-style-type: none !important;
+    align-content: center;
+}
+
 .btn {
     background-color: none;
     border: none;
-    margin: 0 auto;
+    margin-left: auto; 
+    margin-right: auto;
     
 }
 

@@ -1,32 +1,25 @@
-window.prompt();
-
-var login = prompt("Login With Google First!")
-
-if (person == null || person == "") {
-    txt = "Login Cancelled.";
-} else {
-    txt = "Hello " + person + "! Welcome to my page";
-}
-
-
 document.addEventListener("DOMContentLoaded", event => {
+    googleLogin();
+});
+
+document.addEventListener(googleLogin("loadPeople"), event => {
 
     const app = firebase.app();
     console.log(app);
 
     const db = firebase.firestore();
-
     const peopleRef = db.collection('women');
-    const query = peopleRef.where('name', "Jackie");
+
+    const query = peopleRef.where('Name', "==", "Jackie");
 
     const myPost = db.collection('women').doc("Jackie");
     const allInfo = db.collection('men').doc("Chang");
     
     query.get()
-        .then(products => {
-            products.forEach(doc => {
+        .then(women => {
+            women.forEach(doc => {
                 data = doc.data()
-                document.write('${data.name}' + '<br>')
+                document.write("Name: " + data.name + '<br>')
             })
         })
 
@@ -59,8 +52,18 @@ function googleLogin() {
 
         .then(result => {
             const user = result.user;
-            document.write('Hello ${user.displayName}');
-            console.log(user)
+
+            var txtVal = ('Hello ' + user.displayName + ", welcome to my page!");
+            listNode = document.getElementById("loadPeople"),
+            liNode = document.createElement("LI"),
+            txtNode = document.createTextNode(txtVal);
+            
+            liNode.appendChild(txtNode);
+            listNode.appendChild(liNode);
+            li.setAttribute("list-style-type", "none");
+
+
+            console.log(user.displayName)
         })
         .catch(console.log)
 }
@@ -74,11 +77,11 @@ function addLi() {
         listNode = document.getElementById("list"),
         liNode = document.createElement("LI"),
         txtNode = document.createTextNode(txtVal);
-
-    liNode.appendChild(txtNode);
-    listNode.appendChild(liNode);
-
-    console.log("txtVal");  // was working before I began adding random math function, will get back to once that it working.  Won't stop reloading pg
+        
+        liNode.appendChild(txtNode);
+        listNode.appendChild(liNode);
+        
+        console.log("txtVal");  // was working before I began adding random math function, will get back to once that it working.  Won't stop reloading pg
 }
 
 
