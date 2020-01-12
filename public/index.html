@@ -49,10 +49,12 @@
 
     </div>
 
-    <button onclick="googleLogin()" class="btn"><strong>Login With Google</strong>
-    </button>
+    <label for="E-A" data-toggle="popover"
+        data-content="Google Login is automatically loaded upon page load or via button click"><button onclick="googleLogin()" 
+        class="btn"><strong>Login With Google</strong></button></label>
     <br>
-    <button onClick="loadPeople()" class="btn" id="loadPeople"><strong>Click to Load Content</strong></button>
+    <label for="E-A" data-toggle="popover"
+    data-content="Click to load firebase data"><button onClick="loadContent()" class="btn" id="loadContent"><strong>Click to Load Content</strong></button></label>
     <br>
 
     <h6 style="margin-left: auto; margin-right: auto"></h6><strong>Add new members to the list </strong></h5><input onchange="updatePost(event)">

@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", event => {
     googleLogin();
 });
 
-document.addEventListener(googleLogin("loadPeople"), event => {
+
+document.getElementById("loadContent").addEventListener("click", event => {
 
     const app = firebase.app();
     console.log(app);
@@ -10,26 +11,26 @@ document.addEventListener(googleLogin("loadPeople"), event => {
     const db = firebase.firestore();
     const peopleRef = db.collection('women');
 
-    const query = peopleRef.where('Name', "==", "Jackie");
+    const query = peopleRef.where('Name', "==", "");
 
     const myPost = db.collection('women').doc("Jackie");
     const allInfo = db.collection('men').doc("Chang");
     
     query.get()
-        .then(women => {
-            women.forEach(doc => {
+        .then(people => {
+            people.forEach(doc => {
                 data = doc.data()
-                document.write("Name: " + data.name + '<br>')
+                document.write("Name: " + data.Name + '<br>')
             })
         })
 
     myPost.onSnapshot(doc => {
         const data = doc.data();
-        document.querySelector('#title').innerHTML = data.title
+        document.write("Name: " + data.Name + '<br>' + "Pets: " + data.Fans + '<br>')
     })
     allInfo.onSnapshot(doc => {
         const data = doc.data();
-        document.write("Name: " + data.Name + '<br>' + "Fans: " + data.Fans + '<br>')
+        document.write("Name: " + data.Name + '<br>' + "Pets: " + data.Fans + '<br>')
     })
 
 
@@ -81,7 +82,7 @@ function addLi() {
         liNode.appendChild(txtNode);
         listNode.appendChild(liNode);
         
-        console.log("txtVal");  // was working before I began adding random math function, will get back to once that it working.  Won't stop reloading pg
+        console.log("txtVal"); 
 }
 
 
