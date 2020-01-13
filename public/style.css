@@ -29,22 +29,27 @@ h1 {
     
 }
 
-.formButton {
-    margin-right: 100px;
-}
-
-form {
-    padding: 15px;
-    background: none;
-    display: none;
-    width: 300px;
+.col-12, #formButton, b {
+    background: none !important;
+    text-align: center;
+    border: none;
 }
 
 #form1 {
-    margin: auto;
-    border: 1px solid navy;
-
+border: 5px solid navy;
+padding: 15px;
+background: none;
+display: none;
+width: 300px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
 }
+
+.column {
+    width:100%;
+}
+
 
 html,
 body {
@@ -83,3 +88,6 @@ a {
     color: black;
 }
 
+.container{
+    justify-content: center;
+}

@@ -13,4 +13,4 @@ import firebase from 'firebase';
     appId: "1:789557141134:web:5278c226c72779633873df"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig); 

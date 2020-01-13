@@ -48,10 +48,13 @@
         </ul>
     </div>
 
-    <label for="E-A" data-toggle="popover"
-        data-content="Google Login is automatically loaded on page load or via button click"><button
-            onclick="googleLogin()" class="btn"><strong>Login With Google</strong></button></label>
-    <br>
+    <div class="container">
+        <label for="E-A" data-toggle="popover"
+            data-content="Google Login is automatically loaded on page load or via button click"><button
+                onclick="googleLogin()" class="btn"><strong>Login With Google</strong></button></label>
+        <br>
+    </div>
+
 
 
     <div class="nav">
@@ -93,10 +96,31 @@
     </div>
     <br>
 
-    <h6 style="margin-left: auto; margin-right: auto"></h6><strong>Add new members to the list </strong></h5><input
-        onchange="updatePost(event)">
-    <br>
 
+    <div class="container" id="newPeople">
+        <div class="row">
+            <div class="col-12" style="text-align: center;">
+                <button id="formButton" style="color: none !important">Add People</button>
+                <br>
+            </div>
+            <div class="col-12">
+                <form id="form1">
+                    <b>Add new members to the list</b>
+                    <br><br>
+                    <b>Name:</b><input type="text" id="newName">
+                    <br><br>
+                    <b>Pets:</b><input type="number" id="newNumber">
+                    <br>
+                    <button onClick="addLi()" id="hide"
+                        style="background-color:navy; color:white;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 
     <div class="item">
         <label for="C">
             <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button" id="formButton">Add
@@ -111,7 +135,7 @@
         <br>
         <button onClick="addLi()" id="hide"
             style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
-    </form>
+    </form> -->
 
 
 

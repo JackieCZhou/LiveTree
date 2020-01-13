@@ -29,7 +29,36 @@ document.getElementById("loadContent").addEventListener("click", event => {
 
         })
     })
+
+    // document.getElementById("addContent").addEventListener("click", event => {
+
+    //     const app = firebase.app();
+    //     console.log(app);
     
+    //     const db = firebase.firestore();
+    //     const peopleRef = db.collection('people');
+    
+    //     const query = peopleRef.orderBy('Pets', "asc" );
+    
+        
+    //     query.add()
+    //     .then(people => {
+    //         people.forEach(doc => {
+    //             data = doc.data()
+    
+    //             var txtVal = ("Name: " + data.Name + " has " + data.Pets + " Pets.") ;
+    //             listNode = document.getElementById("contentList"),
+    //             liNode = document.createElement("LI"),
+    //             txtNode = document.createTextNode(txtVal);
+                
+    //             liNode.appendChild(txtNode);
+    //             listNode.appendChild(liNode);
+    
+    //         })
+    //     })
+    
+
+
     
     // Testing query for individual people
 
@@ -48,13 +77,13 @@ document.getElementById("loadContent").addEventListener("click", event => {
 
 });
 
-//edit name function
+//add content
 
-function updatePost(e) {
-    const db = firebase.firestore();
-    const myPost = db.collection("women").doc('Jackie');
-    myPost.update({ Name: e.target.value })
-}
+function writeUserData(name) {
+    firebase.database().ref('people/' + name).set({
+      Name: name,
+    });
+  }
 
 //Google login setup
 
