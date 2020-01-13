@@ -40,7 +40,7 @@
         };
     </script>
 
-    <h1>Live-updating Tree View</h1>
+    <h1>Live-updating List</h1>
     <br>
 
     <div class="container" style="padding-left:27%; padding-right:27%" id="loadPeople">
@@ -49,27 +49,9 @@
     </div>
 
     <label for="E-A" data-toggle="popover"
-        data-content="Google Login is automatically loaded upon page load or via button click"><button
+        data-content="Google Login is automatically loaded on page load or via button click"><button
             onclick="googleLogin()" class="btn"><strong>Login With Google</strong></button></label>
     <br>
-    <label for="E-A" data-toggle="popover" data-content="Click to load firebase data"><button onClick="loadContent()"
-            class="btn" id="loadContent"><strong>Click to Load Content</strong></button></label>
-    <br>
-
-    <h6 style="margin-left: auto; margin-right: auto"></h6><strong>Add new members to the list </strong></h5><input
-        onchange="updatePost(event)">
-    <br>
-
-    <div class="item">
-        <input type="checkbox" id="C" />
-        <label for="C">
-            <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button" id="formButton">Add
-            </form>
-        </label>
-    </div>
-
-
-
 
 
     <div class="nav">
@@ -79,10 +61,10 @@
         <div class="milti-level">
             <div class="item">
                 <input type="checkbox" id="A">
-                <a class="nav-link active" href="https://jackieczhou.github.io/portfolio/">
-                    <button type="button" class="btn" data-toggle="popover" title="Portfolio Link"
-                        data-content="Click here to check out my portfolio!"
-                        href="https://jackieczhou.github.io/portfolio/">Portfolio</button>
+                <a class="contentLink">
+                    <label for="E-A" data-toggle="popover" data-content="Click to load firebase data"><button
+                            onClick="loadContent()" class="btn" id="loadContent">Click to Load
+                            Content</button></label>
                 </a>
             </div>
             <div class="item" style="margin-left: 28px;">
@@ -97,9 +79,29 @@
                     </li>
                 </ul>
             </div>
+            <div class="item">
+                <input type="checkbox" id="C" />
+                <label for="C">
+                    <a class="nav-link active" href="https://jackieczhou.github.io/portfolio/">
+                        <button type="button" class="btn" data-toggle="popover" title="Portfolio Link"
+                            data-content="Click here to check out my portfolio!"
+                            href="https://jackieczhou.github.io/portfolio/">Portfolio</button></label>
+                </a>
+            </div>
         </div>
     </div>
+    </div>
+    <br>
 
+    <h6 style="margin-left: auto; margin-right: auto"></h6><strong>Add new members to the list </strong></h5><input
+        onchange="updatePost(event)">
+    <br>
+
+    <div class="item">
+        <label for="C">
+            <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button" id="formButton">Add
+            </form>
+        </label>
     </div>
 
     <form id="form1">
