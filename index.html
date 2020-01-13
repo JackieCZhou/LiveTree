@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Linking Heroku</title>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firebase Linked</title>
+
+
+
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.6.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.6.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.6.1/firebase-firestore.js"></script>
+
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script> -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link href="css/bootnavbar.css" rel="styles">
     <link href="./style.css" rel="stylesheet">
+    <!-- jquery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+
+
 </head>
 
 <body>
-
+    <!-- update the version number as needed -->
+    <script src="/__/firebase/7.6.1/firebase-app.js"></script>
     <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
+        const config = {
             apiKey: "AIzaSyAG-qx615hR4eDgP1DAmPKhw0Js-o-DFyM",
             authDomain: "livetree-65129.firebaseapp.com",
             databaseURL: "https://livetree-65129.firebaseio.com",
@@ -29,15 +38,103 @@
             messagingSenderId: "789557141134",
             appId: "1:789557141134:web:5278c226c72779633873df"
         };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
     </script>
 
+    <h1>Live-updating List</h1>
+    <br>
+
+    <div class="container" style="padding-left:27%; padding-right:27%" id="loadPeople">
+        <ul class="ba" id="loadPeople">
+        </ul>
     </div>
 
+    <label for="E-A" data-toggle="popover"
+        data-content="Google Login is automatically loaded on page load or via button click"><button
+            onclick="googleLogin()" class="btn"><strong>Login With Google</strong></button></label>
+    <br>
 
+
+    <div class="nav">
+        <input type="checkbox" id="menu">
+        <label for="menu">&#9776;</label>
+
+        <div class="milti-level">
+            <div class="item">
+                <input type="checkbox" id="A">
+                <a class="contentLink">
+                    <label for="E-A" data-toggle="popover" data-content="Click to load firebase data"><button
+                            onClick="loadContent()" class="btn" id="loadContent">Click to Load
+                            Content</button></label>
+                </a>
+            </div>
+            <div class="item" style="margin-left: 28px;">
+                <input type="checkbox" id="B" />
+                <label for="B">People</label>
+                <ul id="contentList">
+                    <li>
+                        <label for="C-A" data-toggle="popover"
+                            data-content="Click each name to add randomly generated numbers underneath"
+                            style="background-color: none;" id="mathVal"><button onclick="myFunction()"
+                                style="background: inherit; border:none;">Sample</button></label>
+                    </li>
+                </ul>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="C" />
+                <label for="C">
+                    <a class="nav-link active" href="https://jackieczhou.github.io/portfolio/">
+                        <button type="button" class="btn" data-toggle="popover" title="Portfolio Link"
+                            data-content="Click here to check out my portfolio!"
+                            href="https://jackieczhou.github.io/portfolio/">Portfolio</button></label>
+                </a>
+            </div>
+        </div>
     </div>
-   
+    </div>
+    <br>
+
+    <h6 style="margin-left: auto; margin-right: auto"></h6><strong>Add new members to the list </strong></h5><input
+        onchange="updatePost(event)">
+    <br>
+
+    <div class="item">
+        <label for="C">
+            <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button" id="formButton">Add
+            </form>
+        </label>
+    </div>
+
+    <form id="form1">
+        <b>Type in a name and click submit to add to the list</b>
+        <br>
+        <b>Name:</b><input type="text" id="txtVal">
+        <br>
+        <button onClick="addLi()" id="hide"
+            style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
+    </form>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script src="./app.js"></script>
+    <script src="../src/index.js" type="firebase"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
