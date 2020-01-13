@@ -9,29 +9,41 @@ document.getElementById("loadContent").addEventListener("click", event => {
     console.log(app);
 
     const db = firebase.firestore();
-    const peopleRef = db.collection('women');
+    const peopleRef = db.collection('people');
 
-    const query = peopleRef.where('Name', "==", "");
+    const query = peopleRef.orderBy('Pets', "asc" );
 
-    const myPost = db.collection('women').doc("Jackie");
-    const allInfo = db.collection('men').doc("Chang");
     
     query.get()
-        .then(people => {
-            people.forEach(doc => {
-                data = doc.data()
-                document.write("Name: " + data.Name + '<br>')
-            })
-        })
+    .then(people => {
+        people.forEach(doc => {
+            data = doc.data()
 
-    myPost.onSnapshot(doc => {
-        const data = doc.data();
-        document.write("Name: " + data.Name + '<br>' + "Pets: " + data.Fans + '<br>')
+            var txtVal = ("Name: " + data.Name + " has " + data.Pets + " Pets.") ;
+            listNode = document.getElementById("contentList"),
+            liNode = document.createElement("LI"),
+            txtNode = document.createTextNode(txtVal);
+            
+            liNode.appendChild(txtNode);
+            listNode.appendChild(liNode);
+
+        })
     })
-    allInfo.onSnapshot(doc => {
-        const data = doc.data();
-        document.write("Name: " + data.Name + '<br>' + "Pets: " + data.Fans + '<br>')
-    })
+    
+    
+    // Testing query for individual people
+
+    // const myPost = db.collection('women').doc("Jackie");
+    // const allInfo = db.collection('men').doc("Chang");
+
+//     myPost.onSnapshot(doc => {
+//         const data = doc.data();
+//         document.write("Name: " + data.Name + '<br>' + "Pets: " + data.Fans + '<br>')
+//     })
+//     allInfo.onSnapshot(doc => {
+//         const data = doc.data();
+//         document.write("Name: " + data.Name + '<br>' + "Pets: " + data.Fans + '<br>')
+//     })
 
 
 });
@@ -61,7 +73,6 @@ function googleLogin() {
             
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
-            li.setAttribute("list-style-type", "none");
 
 
             console.log(user.displayName)

@@ -46,19 +46,27 @@
     <div class="container" style="padding-left:27%; padding-right:27%" id="loadPeople">
         <ul class="ba" id="loadPeople">
         </ul>
-
     </div>
 
     <label for="E-A" data-toggle="popover"
-        data-content="Google Login is automatically loaded upon page load or via button click"><button onclick="googleLogin()" 
-        class="btn"><strong>Login With Google</strong></button></label>
+        data-content="Google Login is automatically loaded upon page load or via button click"><button
+            onclick="googleLogin()" class="btn"><strong>Login With Google</strong></button></label>
     <br>
-    <label for="E-A" data-toggle="popover"
-    data-content="Click to load firebase data"><button onClick="loadContent()" class="btn" id="loadContent"><strong>Click to Load Content</strong></button></label>
+    <label for="E-A" data-toggle="popover" data-content="Click to load firebase data"><button onClick="loadContent()"
+            class="btn" id="loadContent"><strong>Click to Load Content</strong></button></label>
     <br>
 
-    <h6 style="margin-left: auto; margin-right: auto"></h6><strong>Add new members to the list </strong></h5><input onchange="updatePost(event)">
+    <h6 style="margin-left: auto; margin-right: auto"></h6><strong>Add new members to the list </strong></h5><input
+        onchange="updatePost(event)">
     <br>
+
+    <div class="item">
+        <input type="checkbox" id="C" />
+        <label for="C">
+            <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button" id="formButton">Add
+            </form>
+        </label>
+    </div>
 
 
 
@@ -79,107 +87,13 @@
             </div>
             <div class="item" style="margin-left: 28px;">
                 <input type="checkbox" id="B" />
-                <label for="B">Categories</label>
-                <ul>
+                <label for="B">People</label>
+                <ul id="contentList">
                     <li>
-                        <div class="sub-item">
-                            <input type="checkbox" id="B-A" />
-                            <label for="B-A">Men</label>
-                            <ul id="list1">
-                                <div class="sub-item">
-                                    <input type="checkbox" id="C-A" />
-                                    <label for="C-A" data-toggle="popover"
-                                        data-content="Click each name to add randomly generated numbers underneath"
-                                        style="background-color: none;" id="mathVal"><button onclick="myFunction()"
-                                            style="background: inherit; border:none;">Name</button></label>
-                                    <ul id="newList">
-                                    </ul>
-                                </div>
-                                <div class="sub-item">
-                                    <input type="checkbox" id="C-B" />
-                                    <label for="C-B">Name</label>
-                                    <ul>
-                                        <li><a>47</a></li>
-                                    </ul>
-                                </div>
-                                <div class="sub-item">
-                                    <input type="checkbox" id="C-C" />
-                                    <label for="C-C">Name</label>
-                                    <ul>
-                                        <li><a>29</a></li>
-                                    </ul>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="sub-item">
-                            <input type="checkbox" id="B-B" />
-                            <label for="B-B">Women</label>
-                            <ul id="list">
-                                <div class="sub-item">
-                                    <input type="checkbox" id="D-A" />
-                                    <label for="D-A" data-toggle="popover"
-                                        data-content="Click each name to add randomly generated numbers underneath">Name</label>
-                                    <ul>
-                                        <li><a>35</a></li>
-                                    </ul>
-                                </div>
-                                <div class="sub-item">
-                                    <input type="checkbox" id="D-B" />
-                                    <label for="D-B">Name</label>
-                                    <ul>
-                                        <li><a>19</a></li>
-                                    </ul>
-                                </div>
-                                <div class="sub-item">
-                                    <input type="checkbox" id="D-C" />
-                                    <label for="D-C">Name</label>
-                                    <ul>
-                                        <li><a>26</a></li>
-                                    </ul>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="sub-item">
-                            <input type="checkbox" id="B-C" />
-                            <label for="B-C">Pets</label>
-                            <ul id="list">
-                                <div class="sub-item">
-                                    <input type="checkbox" id="E-A" />
-                                    <label for="E-A" data-toggle="popover"
-                                        data-content="Click each name to add randomly generated numbers underneath">Name</label>
-                                    <ul>
-                                        <li><a>35</a></li>
-                                    </ul>
-                                </div>
-                                <div class="sub-item">
-                                    <input type="checkbox" id="E-B" />
-                                    <label for="E-B">Name</label>
-                                    <ul>
-                                        <li><a>19</a></li>
-                                    </ul>
-                                </div>
-                                <div class="sub-item">
-                                    <input type="checkbox" id="E-C" />
-                                    <label for="E-C">Name</label>
-                                    <ul>
-                                        <li><a>26</a></li>
-                                    </ul>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item">
-                            <input type="checkbox" id="C" />
-                            <label for="C">
-                                <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button"
-                                        id="formButton">Add</form>
-                            </label>
-                        </div>
+                        <label for="C-A" data-toggle="popover"
+                            data-content="Click each name to add randomly generated numbers underneath"
+                            style="background-color: none;" id="mathVal"><button onclick="myFunction()"
+                                style="background: inherit; border:none;">Sample</button></label>
                     </li>
                 </ul>
             </div>
@@ -189,7 +103,7 @@
     </div>
 
     <form id="form1">
-        <b>Type in a name and lick submit to add to the list</b>
+        <b>Type in a name and click submit to add to the list</b>
         <br>
         <b>Name:</b><input type="text" id="txtVal">
         <br>
