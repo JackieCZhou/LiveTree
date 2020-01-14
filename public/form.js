@@ -13,13 +13,13 @@
       var messagesRed = firebase.database().ref('messages');
 
 
-    document.getElementById("form1").addEventListener("submit", submitForm);
+    document.getElementById("contactForm").addEventListener("submit", submitForm);
 
     function submitForm(event){
         event.preventDefault();
 
-        let name = getInputval('newName');
-        let pets = getInputVal('newNumber');
+        let name = getInputval('name');
+        let pets = getInputVal('number');
 
         console.log(123);
 
