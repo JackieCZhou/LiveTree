@@ -77,13 +77,47 @@ document.getElementById("loadContent").addEventListener("click", event => {
 
 });
 
-//add content
+//add new person to firebase
+// var newEntry = database.ref();
 
-function writeUserData(name) {
-    firebase.database().ref('people/' + name).set({
-      Name: name,
-    });
-  }
+// var nameEntered= "";
+// var numberEntered = "";
+
+// $("#submit").on("click", function(event) {
+//     event.preventDefault();
+
+//     nameEntered = $("#newPerson").val().trim();
+//     numberEntered= $("#newNumber").val().trim();
+
+//     newEntry.push({
+//         Name: nameEntered,
+//         Pets: numberEntered,
+//     })
+
+
+// });
+// newEntry.on("child_added", function(childSnapshot) {
+//     var newAdd = childSnapshot.val();
+    
+//     console.log("Name: " + newAdd.train);
+//     console.log("Pets: " + newAdd.destination);
+    
+//     var nameNew = $("<li>").text(newAdd.name);
+//     var numberNew = $("<li>").number(newAdd.number);
+
+//     var txtVal = ("Name: " + nameNew + " has " + numberNew + " Pets.") ;
+//     listNode = document.getElementById("contentList"),
+//     liNode = document.createElement("LI"),
+//     txtNode = document.createTextNode(txtVal);
+    
+//     liNode.appendChild(txtNode);
+//     listNode.appendChild(liNode);
+    
+    
+
+// });
+
+
 
 //Google login setup
 
