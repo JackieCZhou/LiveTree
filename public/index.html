@@ -28,6 +28,7 @@
 <body>
     <!-- update the version number as needed -->
     <script src="/__/firebase/7.6.1/firebase-app.js"></script>
+
     <script>
         const config = {
             apiKey: "AIzaSyAG-qx615hR4eDgP1DAmPKhw0Js-o-DFyM",
@@ -104,59 +105,44 @@
                 <br>
             </div>
             <div class="col-12">
-                <form id="form1">
-                    <b>Add new members to the list</b>
-                    <br><br>
-                    <label for="newPerson">Name:</b><input type="text" id="newName"></label>
-                    <br><br>
-                    <label for="newPerson">Pets:</b><input type="number" id="newNumber"></label>
-                    <br>
-                    <button onClick="addLi()" id="submit"
-                        style="background-color:navy; color:white;">Submit</button>
-                </form>
+                <div class="container" id="form1">
+                    <div class="contact">
+                        <h6>Add People To The List</h6>
+                        <form>
+                            <p>
+                                <label>Name: </label>
+                                <input type="text" name="newName">
+                            </p>
+                            <p>
+                                <label>Pets: </label>
+                                <input type="number" name="newNumber">
+                            </p>
+                            <p>
+                                <button id="submit" style="color: none !important">Submit</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
 
 
-    <!-- 
-    <div class="item">
-        <label for="C">
-            <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button" id="formButton">Add
-            </form>
-        </label>
-    </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-    <form id="form1">
-        <b>Type in a name and click submit to add to the list</b>
-        <br>
-        <b>Name:</b><input type="text" id="txtVal">
-        <br>
-        <button onClick="addLi()" id="hide"
-            style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
-    </form> -->
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
 
+            <script src="./app.js"></script>
+            <script src="../src/index.js" type="firebase"></script>
+            <script src="form.js" type="input form"></script>
 
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-
-    <script src="./app.js"></script>
-    <script src="../src/index.js" type="firebase"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
 
 
 </body>

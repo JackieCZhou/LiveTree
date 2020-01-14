@@ -11,59 +11,34 @@ document.getElementById("loadContent").addEventListener("click", event => {
     const db = firebase.firestore();
     const peopleRef = db.collection('people');
 
-    const query = peopleRef.orderBy('Pets', "asc" );
+    const query = peopleRef.orderBy('Pets', "asc");
 
-    
+
     query.get()
-    .then(people => {
-        people.forEach(doc => {
-            data = doc.data()
+        .then(people => {
+            people.forEach(doc => {
+                data = doc.data()
 
-            var txtVal = ("Name: " + data.Name + " has " + data.Pets + " Pets.") ;
-            listNode = document.getElementById("contentList"),
-            liNode = document.createElement("LI"),
-            txtNode = document.createTextNode(txtVal);
-            
-            liNode.appendChild(txtNode);
-            listNode.appendChild(liNode);
+                var txtVal = ("Name: " + data.Name + " has " + data.Pets + " Pets.");
+                listNode = document.getElementById("contentList"),
+                    liNode = document.createElement("LI"),
+                    txtNode = document.createTextNode(txtVal);
 
+                liNode.appendChild(txtNode);
+                listNode.appendChild(liNode);
+
+            })
         })
-    })
-
-    // document.getElementById("addContent").addEventListener("click", event => {
-
-    //     const app = firebase.app();
-    //     console.log(app);
-    
-    //     const db = firebase.firestore();
-    //     const peopleRef = db.collection('people');
-    
-    //     const query = peopleRef.orderBy('Pets', "asc" );
-    
-        
-    //     query.add()
-    //     .then(people => {
-    //         people.forEach(doc => {
-    //             data = doc.data()
-    
-    //             var txtVal = ("Name: " + data.Name + " has " + data.Pets + " Pets.") ;
-    //             listNode = document.getElementById("contentList"),
-    //             liNode = document.createElement("LI"),
-    //             txtNode = document.createTextNode(txtVal);
-                
-    //             liNode.appendChild(txtNode);
-    //             listNode.appendChild(liNode);
-    
-    //         })
-    //     })
-    
+});
 
 
-    
-    // Testing query for individual people
 
-    // const myPost = db.collection('women').doc("Jackie");
-    // const allInfo = db.collection('men').doc("Chang");
+
+
+// Testing query for individual people
+
+// const myPost = db.collection('women').doc("Jackie");
+// const allInfo = db.collection('men').doc("Chang");
 
 //     myPost.onSnapshot(doc => {
 //         const data = doc.data();
@@ -73,50 +48,6 @@ document.getElementById("loadContent").addEventListener("click", event => {
 //         const data = doc.data();
 //         document.write("Name: " + data.Name + '<br>' + "Pets: " + data.Fans + '<br>')
 //     })
-
-
-});
-
-//add new person to firebase
-// var newEntry = database.ref();
-
-// var nameEntered= "";
-// var numberEntered = "";
-
-// $("#submit").on("click", function(event) {
-//     event.preventDefault();
-
-//     nameEntered = $("#newPerson").val().trim();
-//     numberEntered= $("#newNumber").val().trim();
-
-//     newEntry.push({
-//         Name: nameEntered,
-//         Pets: numberEntered,
-//     })
-
-
-// });
-// newEntry.on("child_added", function(childSnapshot) {
-//     var newAdd = childSnapshot.val();
-    
-//     console.log("Name: " + newAdd.train);
-//     console.log("Pets: " + newAdd.destination);
-    
-//     var nameNew = $("<li>").text(newAdd.name);
-//     var numberNew = $("<li>").number(newAdd.number);
-
-//     var txtVal = ("Name: " + nameNew + " has " + numberNew + " Pets.") ;
-//     listNode = document.getElementById("contentList"),
-//     liNode = document.createElement("LI"),
-//     txtNode = document.createTextNode(txtVal);
-    
-//     liNode.appendChild(txtNode);
-//     listNode.appendChild(liNode);
-    
-    
-
-// });
-
 
 
 //Google login setup
@@ -131,9 +62,9 @@ function googleLogin() {
 
             var txtVal = ('Hello ' + user.displayName + ", welcome to my page!");
             listNode = document.getElementById("loadPeople"),
-            liNode = document.createElement("LI"),
-            txtNode = document.createTextNode(txtVal);
-            
+                liNode = document.createElement("LI"),
+                txtNode = document.createTextNode(txtVal);
+
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
 
@@ -152,11 +83,11 @@ function addLi() {
         listNode = document.getElementById("list"),
         liNode = document.createElement("LI"),
         txtNode = document.createTextNode(txtVal);
-        
-        liNode.appendChild(txtNode);
-        listNode.appendChild(liNode);
-        
-        console.log("txtVal"); 
+
+    liNode.appendChild(txtNode);
+    listNode.appendChild(liNode);
+
+    console.log("txtVal");
 }
 
 
@@ -184,7 +115,7 @@ $(document).ready(function () {
 });
 
 
-// build and auto populate list
+// build and auto populate random interger list
 
 var numList = [];
 
