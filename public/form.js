@@ -13,7 +13,10 @@
       var messagesRef = firebase.database().ref('messages');
 
 
-    document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+
+
+    document.getElementById("contactForm").addEventListener("submit", submitForm); 
 
     function submitForm(event){
         event.preventDefault();
@@ -22,7 +25,7 @@
         var pets = getInputVal('number');
 
         console.log(123);
-        
+
         saveMessage(name, pets);
 
     }
