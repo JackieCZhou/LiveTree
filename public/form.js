@@ -10,7 +10,7 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig); 
 
-      var messagesRed = firebase.database().ref('messages');
+      var messagesRef = firebase.database().ref('messages');
 
 
     document.getElementById("contactForm").addEventListener("submit", submitForm);
@@ -18,15 +18,18 @@
     function submitForm(event){
         event.preventDefault();
 
-        let name = getInputval('name');
-        let pets = getInputVal('number');
+        var name = getInputVal('name');
+        var pets = getInputVal('number');
 
         console.log(123);
+        
+        saveMessage(name, pets);
 
     }
 
+
     function getInputVal(id){
-        return document.getElementById(id).nodeValue;
+        return document.getElementById(id).value;
     }
 
     function saveInfo(name, pets){
@@ -34,5 +37,5 @@
         newMessageRef.set({
             name: name,
             pets: pets,
-        })
+        }) 
     }
