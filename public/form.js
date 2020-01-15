@@ -1,3 +1,5 @@
+        var firebase = require ('firebase');
+        
         var firebaseConfig = {
         apiKey: "AIzaSyAG-qx615hR4eDgP1DAmPKhw0Js-o-DFyM",
         authDomain: "livetree-65129.firebaseapp.com",
@@ -10,35 +12,31 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig); 
 
-      var messagesRef = firebase.database().ref('messages');
+    //   var messagesRef = firebase.database().ref('messages');
 
 
+    // document.getElementById("contactForm").addEventListener("click", submitForm);
+    //     event.preventDefault(e);
+
+    // function submitForm(e){
+
+    //     var name = getInputVal('name');
+    //     var pets = getInputVal('number');
+
+    //     console.log(123);
+
+    //     saveInfo(name, pets);
+    // };
 
 
+    // function getInputVal(id){
+    //     return document.getElementById(id).value;
+    // }
 
-    document.getElementById("contactForm").addEventListener("submit", submitForm); 
-
-    function submitForm(event){
-        event.preventDefault();
-
-        var name = getInputVal('name');
-        var pets = getInputVal('number');
-
-        console.log(123);
-
-        saveMessage(name, pets);
-
-    }
-
-
-    function getInputVal(id){
-        return document.getElementById(id).value;
-    }
-
-    function saveInfo(name, pets){
-        var newMessageRef = messagesRef.push();
-        newMessageRef.set({
-            name: name,
-            pets: pets,
-        }) 
-    }
+    // function saveInfo(name, pets){
+    //     var newMessageRef = messagesRef.push();
+    //     newMessageRef.set({
+    //         name: name,
+    //         pets: pets,
+    //     }) 
+    // }
