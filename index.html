@@ -28,6 +28,7 @@
 <body>
     <!-- update the version number as needed -->
     <script src="/__/firebase/7.6.1/firebase-app.js"></script>
+
     <script>
         const config = {
             apiKey: "AIzaSyAG-qx615hR4eDgP1DAmPKhw0Js-o-DFyM",
@@ -40,6 +41,8 @@
         };
     </script>
 
+
+
     <h1>Live-updating List</h1>
     <br>
 
@@ -48,10 +51,13 @@
         </ul>
     </div>
 
-    <label for="E-A" data-toggle="popover"
-        data-content="Google Login is automatically loaded on page load or via button click"><button
-            onclick="googleLogin()" class="btn"><strong>Login With Google</strong></button></label>
-    <br>
+    <div class="container">
+        <label for="E-A" data-toggle="popover"
+            data-content="Google Login is automatically loaded on page load or via button click"><button
+                onclick="googleLogin()" class="btn"><strong>Login With Google</strong></button></label>
+        <br>
+    </div>
+
 
 
     <div class="nav">
@@ -93,57 +99,52 @@
     </div>
     <br>
 
-    <form>
-        <h6>Add New People</h6>
-        <div class="form">
-            <form id="newPeople">
-                Name:<br>
-                <input type="text" name="name"><br>
-                Pets:<br>
-                <input type="number" name="pets">
-                <input onClick="addContent()" type="submit" id="btn" value="Add">
-            </form>
-            <br>
+    <div class="container" id="newPeople">
+        <div class="row">
+            <div class="col-12" style="text-align: center;">
+                <button id="formButton" style="color: none !important">Add People</button>
+                <br>
+            </div>
+            <div class="col-12">
+                <div class="container">
+                    <div id="form1">
+                        <h6><strong>Add People To The List</strong></h6>
+                        <form id="contactForm">
+                            <p>
+                                <label>Name: </label>
+                                <input type="text" id="name">
+                            </p>
+                            <p>
+                                <label>Pets: </label>
+                                <input type="number" id="number">
+                            </p>
+                            <p>
+                                <button id="submit" style="color: none !important">Submit</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-
-
-    <!-- <div class="item">
-        <label for="C">
-            <form class="form-inline my-2 my-lg-0"><button class="btn my-2 my-sm-0" type="button" id="formButton">Add
-            </form>
-        </label>
-    </div>
-
-    <form id="form1">
-        <b>Type in a name and click submit to add to the list</b>
-        <br>
-        <b>Name:</b><input type="text" id="txtVal">
-        <br>
-        <button onClick="addLi()" id="hide"
-            style="background-color:navy; color:white; margin-left: 37%;">Submit</button>
-    </form>
- -->
 
 
 
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+        <script src="./public/app.js"></script>
+        <script src="./src/index.js" type="firebase"></script>
 
-    <script src="./public/app.js"></script>
-    <script src="./src/index.js" type="firebase"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
 
 
 </body>
