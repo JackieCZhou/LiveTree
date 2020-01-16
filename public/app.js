@@ -3,36 +3,6 @@
 // });
 
 
-var messagesRef = firebase.database().ref('messages');
-
-
-document.getElementById("contactForm").addEventListener("click", submitForm);
-    event.preventDefault(e);
-
-function submitForm(e){
-
-    var name = getInputVal('name');
-    var pets = getInputVal('number');
-
-    console.log(123);
-
-    saveInfo(name, pets);
-};
-
-
-function getInputVal(id){
-    return document.getElementById(id).value;
-}
-
-function saveInfo(name, pets){
-    var newMessageRef = messagesRef.push();
-    newMessageRef.set({
-        name: name,
-        pets: pets,
-    }) 
-}
-
-
 document.getElementById("loadContent").addEventListener("click", event => {
 
     const app = firebase.app();
@@ -58,6 +28,33 @@ document.getElementById("loadContent").addEventListener("click", event => {
 
             })
         })
+});
+
+
+
+document.getElementById("contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const app = firebase.app();
+    console.log(app);
+
+    const db = firebase.firestore();
+
+    var name = document.getElementById('name').value;
+    var pets = document.getElementById('number').value;
+
+
+    db.collection("people").doc(name).set({
+        Name: name,
+        Pets: pets,
+    })
+        .then(function () {
+            console.log("Document successfully written!");
+        })
+        .catch(function (error) {
+            console.error("Error writing document: ", error);
+        });
+
 });
 
 // Testing query for individual people
@@ -159,8 +156,6 @@ $(document).ready(function () {
         $("#form1").toggle();
     });
 });
-
-
 
 // onHover function
 

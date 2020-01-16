@@ -41,7 +41,9 @@
         };
     </script>
 
-    <h1>Live-updating List</h1>
+
+
+<h1>Live-updating List</h1>
     <br>
 
     <div class="container" style="padding-left:27%; padding-right:27%" id="loadPeople">
@@ -97,36 +99,60 @@
     </div>
     <br>
 
+    <!-- <div class="col-12">
+        <div class="container">
+            <div>
+                <h6>Add People To The List</h6>
+                <form id="contactForm">
+                    <p>
+                        <label>Name: </label>
+                        <input type="text" id="name">
+                    </p>
+                    <p>
+                        <label>Pets: </label>
+                        <input type="number" id="number">
+                    </p>
+                    <p>
+                        <button id="submit" style="color: none !important">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div> -->
 
-    <div class="container" id="newPeople">
+
+
+
+<div class="container" id="newPeople">
         <div class="row">
             <div class="col-12" style="text-align: center;">
                 <button id="formButton" style="color: none !important">Add People</button>
                 <br>
             </div>
             <div class="col-12">
-                <div class="container" id="form1">
-                    <div id="contactForm">
-                        <h6>Add People To The List</h6>
-                        <form id="contactForm">
-                            <p>
-                                <label>Name: </label>
-                                <input type="text" name="name">
-                            </p>
-                            <p>
-                                <label>Pets: </label>
-                                <input type="number" name="number">
-                            </p>
-                            <p>
-                                <button id="submit" style="color: none !important">Submit</button>
-                            </p>
-                        </form>
+                    <div class="container">
+                        <div id="form1">
+                            <h6>Add People To The List</h6>
+                            <form id="contactForm">
+                                <p>
+                                    <label>Name: </label>
+                                    <input type="text" id="name">
+                                </p>
+                                <p>
+                                    <label>Pets: </label>
+                                    <input type="number" id="number">
+                                </p>
+                                <p>
+                                    <button id="submit" style="color: none !important">Submit</button>
+                                </p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
 
 
-            <script src="./form.js" type="inputForm"></script>
+            <!-- <script src="./form.js" type="inputForm"></script> -->
             <script src="./app.js"></script>
             <script src="../src/index.js" type="firebase"></script>
             <script src="features.js" type="extraFeatures"></script>
