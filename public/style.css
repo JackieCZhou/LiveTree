@@ -22,7 +22,7 @@ h1 {
     
 }
 
-.col-12, #formButton, b {
+.col-12, #formButton, b, #formbutton2 {
     background: none !important;
     text-align: center;
     border: none;

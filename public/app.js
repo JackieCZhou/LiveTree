@@ -57,6 +57,8 @@ document.getElementById("contactForm").addEventListener("submit", event => {
 
 });
 
+
+
 // Testing query for individual people
 
 // const myPost = db.collection('women').doc("Jackie");
