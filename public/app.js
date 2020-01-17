@@ -72,7 +72,7 @@ $(document).ready(function () {
 });
 
 
-document.getElementById("removeForm").addEventListener("submit", event => {
+document.getElementById("removeForm").addEventListener("suremoveButtonbmit", event => {
     event.preventDefault();
 
     const db = firebase.firestore();
