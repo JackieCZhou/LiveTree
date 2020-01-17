@@ -57,6 +57,53 @@ document.getElementById("contactForm").addEventListener("submit", event => {
 
 });
 
+// hide/reveal form onClick
+
+$(document).ready(function () {
+    $("#formButton").click(function () {
+        $("#form1").toggle();
+    });
+});
+
+$(document).ready(function () {
+    $("#hide").click(function () {
+        $("#form1").toggle();
+    });
+});
+
+
+document.getElementById("removeForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const db = firebase.firestore();
+
+    var name = document.getElementById('name').value;
+    var pets = document.getElementById('number').value;
+
+    db.collection("people").doc(name, pets).delete({
+        Name: name,
+        Pets: pets,
+    })
+        .then(function () {
+            console.log("Document Deleted");
+
+        });
+});
+
+
+// hide/reveal form onClick
+
+$(document).ready(function () {
+    $("#removeButton").click(function () {
+        $("#form2").toggle();
+    });
+});
+
+$(document).ready(function () {
+    $("#hide").click(function () {
+        $("#form2").toggle();
+    });
+});
 
 
 // Testing query for individual people
@@ -143,21 +190,6 @@ function myFunction() {
 
 //     console.log(newNum);
 // }
-
-
-// hide/reveal form onClick
-
-$(document).ready(function () {
-    $("#formButton").click(function () {
-        $("#form1").toggle();
-    });
-});
-
-$(document).ready(function () {
-    $("#hide").click(function () {
-        $("#form1").toggle();
-    });
-});
 
 // onHover function
 
