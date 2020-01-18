@@ -35,12 +35,23 @@ document.getElementById("loadContent").addEventListener("click", event => {
         })
 
     }
+    //real time updates
 
-    db.collection('people').get().then((snapshot) => {
-        snapshot.docs.forEach(doc => {
-            renderPeople(doc);
+    db.collection('people').orderBy('Name').onSnapshot(snapshot => {
+        let changes = snapshot.docChanges();
+        changes.forEach(change => {
+            if (change.type == 'added') {
+                renderPeople(change.doc);
+            } else if (change.type == 'removed') {
+                let li = peopleRef.querySelector('[data-id=' + change.doc.id + ']');
+                peopleRef.removeChild(li);
+            }
+            console.log(change.doc.data())
         })
-
+    })
+    db.collection('people').doc(id).update({
+        name: name,
+        pets: pets,
     })
 
 });
@@ -73,6 +84,7 @@ document.getElementById("contactForm").addEventListener("submit", event => {
         });
 
 });
+
 
 // hide/reveal form onClick
 
