@@ -4,30 +4,45 @@
 
 
 document.getElementById("loadContent").addEventListener("click", event => {
-
-    const app = firebase.app();
-    console.log(app);
-
+    const peopleRef = document.querySelector('#contentList');
     const db = firebase.firestore();
-    const peopleRef = db.collection('people');
-    const query = peopleRef.orderBy('Pets', "asc");
 
 
-    query.get()
-        .then(people => {
-            people.forEach(doc => {
-                data = doc.data()
+    function renderPeople(doc) {
+        let li = document.createElement('LI');
+        let name = document.createElement('span');
+        let pets = document.createElement('div');
+        let cross = document.createElement('span');
 
-                var txtVal = ("Name: " + data.Name + " has " + data.Pets + " Pets.");
-                listNode = document.getElementById("contentList"),
-                    liNode = document.createElement("LI"),
-                    txtNode = document.createTextNode(txtVal);
+        li.setAttribute('data-id', doc.id)
 
-                liNode.appendChild(txtNode);
-                listNode.appendChild(liNode);
+        name.textContent = doc.data().Name;
+        pets.textContent = doc.data().Pets;
+        cross.textContent = 'X';
 
-            })
+        li.appendChild(name);
+        li.appendChild(pets);
+        li.appendChild(cross);
+
+        peopleRef.appendChild(li);
+
+        //deleting data
+        cross.addEventListener('click', (e) => {
+            e.preventDefault();
+            let id = e.target.parentElement.getAttribute('data-id');
+            db.collection('people').doc(id).delete();
+            console.log('content deleted');
         })
+
+    }
+
+    db.collection('people').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            renderPeople(doc);
+        })
+
+    })
+
 });
 
 
@@ -49,6 +64,8 @@ document.getElementById("contactForm").addEventListener("submit", event => {
         Pets: pets,
     })
         .then(function () {
+            contactForm.name.value = '';
+            contactForm.number.value = '';
             console.log("Document successfully written!");
         })
         .catch(function (error) {
@@ -71,39 +88,6 @@ $(document).ready(function () {
     });
 });
 
-
-document.getElementById("removeForm").addEventListener("suremoveButtonbmit", event => {
-    event.preventDefault();
-
-    const db = firebase.firestore();
-
-    var name = document.getElementById('name').value;
-    var pets = document.getElementById('number').value;
-
-    db.collection("people").doc(name, pets).delete({
-        Name: name,
-        Pets: pets,
-    })
-        .then(function () {
-            console.log("Document Deleted");
-
-        });
-});
-
-
-// hide/reveal form onClick
-
-$(document).ready(function () {
-    $("#removeButton").click(function () {
-        $("#form2").toggle();
-    });
-});
-
-$(document).ready(function () {
-    $("#hide").click(function () {
-        $("#form2").toggle();
-    });
-});
 
 
 // Testing query for individual people
@@ -136,6 +120,7 @@ function googleLogin() {
                 liNode = document.createElement("LI"),
                 txtNode = document.createTextNode(txtVal);
 
+
             liNode.appendChild(txtNode);
             listNode.appendChild(liNode);
 
@@ -147,19 +132,20 @@ function googleLogin() {
 
 // <!-- script for list generation under tabs -->
 
-function addLi() {
-    e.preventDefault();
-    var txtVal = document.getElementById("txtVal").value,
 
-        listNode = document.getElementById("list"),
-        liNode = document.createElement("LI"),
-        txtNode = document.createTextNode(txtVal);
+// function addLi() {
+//     e.preventDefault();
 
-    liNode.appendChild(txtNode);
-    listNode.appendChild(liNode);
+//     db.collection('people').get().then((snapshot) => {
+//         snapshot.docs.forEach(doc => {
 
-    console.log("txtVal");
-}
+//             console.log(docs.data());
+
+//         }
+//         )
+//     }
+//     )
+// }
 
 // build and auto populate random interger list
 

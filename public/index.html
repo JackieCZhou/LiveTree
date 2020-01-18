@@ -39,6 +39,10 @@
             messagingSenderId: "789557141134",
             appId: "1:789557141134:web:5278c226c72779633873df"
         };
+          // Initialize Firebase
+          firebase.initializeApp(config); 
+          const db = firebase.firestore();
+
     </script>
 
 
@@ -68,7 +72,8 @@
             <div class="item">
                 <input type="checkbox" id="A">
                 <a class="contentLink">
-                    <label for="E-A" data-toggle="popover" data-content="Click to load firebase data"><button class="btn" id="loadContent">Click to Load
+                    <label for="E-A" data-toggle="popover" data-content="Click to load firebase data"><button
+                            class="btn" id="loadContent">Click to Load
                             Content</button></label>
                 </a>
             </div>
@@ -119,7 +124,7 @@
                                 <input type="number" id="number">
                             </p>
                             <p>
-                                <button id="removeButton" style="color: none !important">Submit</button>
+                                <button id="submit" style="color: none !important">Submit</button>
                             </p>
                         </form>
                     </div>
@@ -127,35 +132,6 @@
             </div>
         </div>
     </div>
-
-    <div class="container" id="removePeople">
-            <div class="row">
-                <div class="col-12" style="text-align: center;">
-                    <button id="removeButton" style="color: none !important">Remove People</button>
-                    <br>
-                </div>
-                <div class="col-12">
-                    <div class="container">
-                        <div id="form2">
-                            <h6><strong>Remove People</strong></h6>
-                            <form id="removeForm">
-                                <p>
-                                    <label>Name: </label>
-                                    <input type="text" id="name">
-                                </p>
-                                <p>
-                                    <label>Pets: </label>
-                                    <input type="number" id="number">
-                                </p>
-                                <p>
-                                    <button id="submit" style="color: none !important">Submit</button>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
     <script src="./app.js"></script>
