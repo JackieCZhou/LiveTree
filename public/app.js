@@ -10,15 +10,15 @@ document.getElementById("loadContent").addEventListener("click", event => {
 
     function renderPeople(doc) {
         let li = document.createElement('LI');
-        let name = document.createElement('span');
-        let pets = document.createElement('div');
+        let name = document.createElement('li');
+        let pets = document.createElement('span');
         let cross = document.createElement('span');
 
         li.setAttribute('data-id', doc.id)
 
         name.textContent = doc.data().Name;
         pets.textContent = doc.data().Pets;
-        cross.textContent = 'X';
+        cross.textContent = '   x';
 
         li.appendChild(name);
         li.appendChild(pets);
@@ -49,12 +49,8 @@ document.getElementById("loadContent").addEventListener("click", event => {
             console.log(change.doc.data())
         })
     })
-    db.collection('people').doc(id).update({
-        name: name,
-        pets: pets,
-    })
-
 });
+
 
 
 
@@ -97,6 +93,15 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#hide").click(function () {
         $("#form1").toggle();
+    });
+});
+
+// onHover function
+
+$(document).ready(function () {
+    $('[data-toggle="popover"]').popover({
+        placement: 'top',
+        trigger: 'hover'
     });
 });
 
@@ -169,8 +174,6 @@ function myFunction() {
     numList.push(rnd);
 
     console.log(numList);
-
-    buildList();
 }
 
 // // <!-- script for math & placement of math val --> not working, will come back to
@@ -188,12 +191,3 @@ function myFunction() {
 
 //     console.log(newNum);
 // }
-
-// onHover function
-
-$(document).ready(function () {
-    $('[data-toggle="popover"]').popover({
-        placement: 'top',
-        trigger: 'hover'
-    });
-});
