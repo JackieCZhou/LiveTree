@@ -1,25 +1,33 @@
+.navbar{
+    background-color: inherit !important;
+    font-family: inherit;
+}
+
+.nav-link {
+    padding: none !important;
+}
+
+
 #btn {
     background-color: none;
     border: none;
+    padding: none !important;
 }
 
-h1 {
+h3 {
     font-size: 75px;
     color: navy;
-    text-align: center;
+    margin-left: 0,auto;
+    margin-right: 0, auto;
+
+}
+a{
+    color: black;
 }
 
 #loadPeople{
     list-style-type: none !important;
     align-content: center;
-}
-
-.btn {
-    background-color: none;
-    border: none;
-    margin-left: auto; 
-    margin-right: auto;
-    
 }
 
 .col-12, #formButton, b, #formbutton2 {
@@ -33,27 +41,10 @@ h1 {
 }
 
 #form1 {
-box-shadow: 0 0 20px 0rgba(72,94,116,0,7);
-padding: 15px;
 background: none;
 display: none;
-width: 300px;
-margin-left: auto;
-margin-right: auto;
 text-align: center;
 }
-
-
-#form2 {
-    box-shadow: 0 0 20px 0rgba(72,94,116,0,7);
-    padding: 15px;
-    background: none;
-    display: none;
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    }
 
 .column {
     width:100%;
@@ -70,6 +61,7 @@ body {
     background: rgb(219, 224, 241);
     background: radial-gradient(circle, rgba(219, 224, 241, 1) 0%, rgba(180, 191, 199, 1) 47%, rgba(46, 53, 77, 1) 100%);
     height: 100%;
+    text-align: center;
 }
 
 .multi-level,
@@ -83,10 +75,6 @@ body {
     display: block;
 }
 
-
-.nav {
-    margin: 50px;
-}
 
 a {
     color: black;
