@@ -9,10 +9,10 @@ document.getElementById("loadContent").addEventListener("click", event => {
 
 
     function renderPeople(doc) {
-        let li = document.createElement('LI');
-        let cross = document.createElement('li');
+        let li = document.createElement('li');
         let name = document.createElement('span');
-        let pets = document.createElement('div');
+        let pets = document.createElement('span');
+        let cross = document.createElement('div');
 
         li.setAttribute('data-id', doc.id)
 
@@ -20,9 +20,9 @@ document.getElementById("loadContent").addEventListener("click", event => {
         pets.textContent = doc.data().Pets;
         cross.textContent = 'x';
 
-        li.appendChild(cross);
         li.appendChild(name);
         li.appendChild(pets);
+        li.appendChild(cross);
 
         peopleRef.appendChild(li);
 
@@ -35,6 +35,7 @@ document.getElementById("loadContent").addEventListener("click", event => {
         })
 
     }
+
     //real time updates
 
     db.collection('people').orderBy('Name').onSnapshot(snapshot => {
