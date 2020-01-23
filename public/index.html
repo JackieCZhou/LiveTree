@@ -138,49 +138,37 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-mb-4">
-                <div class="card mb-3" style="margin:10px">
+            <div class="col-md-6">
+                <div class="card" style="margin:10px; padding: 10px; min-height: 300px;">
                     <div class="row no-gutters">
-                        <div class="col-md-6">
-                            <img src="https://via.placeholder.com/250x310" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <div class="card-body">
                                 <a class="contentLink">
-                                    <label for="E-A" data-toggle="popover"
+                                    <label data-toggle="popover"
                                         data-content="Click to load firebase data"><button class="btn"
                                             id="loadContent">Click to Load Content</button></label>
                                 </a>
-                                <ul id="contentList">
-                                    <li>
-                                        <label for="C-A" data-toggle="popover"
-                                            data-content="Click each name to add randomly generated numbers underneath"
-                                            style="background-color: none;" id="mathVal"><button onclick="myFunction()"
-                                                style="background: inherit; border:none;">Sample</button></label>
-                                    </li>
-                                </ul>
+                                <div class="col-md-6">
+                                    <ul id="contentList">
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-mb-4">
-                <div class="card mb-3" style="margin:10px">
+            <div class="col-md-6">
+                <div class="card" style="margin:10px; padding: 20px; min-height: 300px;">
                     <div class="row no-gutters">
-                        <div class="col-md-6">
-                            <img src="https://via.placeholder.com/250x310" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <div class="card-body">
-                                <button id="formButton">Add People</button>
-                                <br>
-                                <p class="card-text">Add new people to the list </p>
+                                    <button id="formButton">Add People</button>
+                                </div>
                                 <div class="container" id="newPeople">
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="container">
                                                 <div id="form1">
-                                                    <h6><strong>Add People To The List</strong></h6>
                                                     <form id="contactForm">
                                                         <p>
                                                             <label>Name: </label>
@@ -209,6 +197,13 @@
     </div>
 
     <br>
+
+
+
+    <!-- <label for="C-A" data-toggle="popover"
+    data-content="Click each name to add randomly generated numbers underneath"
+    style="background-color: none;" id="mathVal"><button onclick="myFunction()"
+        style="background: inherit; border:none;">Sample</button></label> -->
 
 
 
