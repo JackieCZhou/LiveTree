@@ -1,0 +1,25 @@
+[debug] [2020-01-24T19:57:49.066Z] ----------------------------------------------------------------------
+[debug] [2020-01-24T19:57:49.068Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-24T19:57:49.068Z] CLI Version:   7.12.1
+[debug] [2020-01-24T19:57:49.069Z] Platform:      darwin
+[debug] [2020-01-24T19:57:49.069Z] Node Version:  v10.15.3
+[debug] [2020-01-24T19:57:49.069Z] Time:          Fri Jan 24 2020 14:57:49 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-24T19:57:49.070Z] ----------------------------------------------------------------------
+[debug] [2020-01-24T19:57:49.070Z] 
+[debug] [2020-01-24T19:57:49.083Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-24T19:57:49.084Z] > authorizing via signed-in user
+[debug] [2020-01-24T19:57:49.084Z] [iam] checking project livetree-65129 for permissions ["firebase.projects.get"]
+[debug] [2020-01-24T19:57:49.086Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/livetree-65129:testIamPermissions  
+
+[debug] [2020-01-24T19:57:49.342Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-24T19:57:49.345Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/livetree-65129  
+ 
+[debug] [2020-01-24T19:57:49.603Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/jackiedavison/Desktop/LiveTree'...
+[info] 
+[debug] [2020-01-24T19:57:49.618Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/livetree-65129/webApps/-/config  
+ 
+[debug] [2020-01-24T19:57:52.846Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
