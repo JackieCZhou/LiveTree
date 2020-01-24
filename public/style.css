@@ -115,6 +115,7 @@ li{
     font-size: 16px;
     position: relative;
     border-bottom: 1px solid #e6e6e6;
+    text-align: left;
 }
 
 li:nth-child(even){
@@ -135,7 +136,7 @@ li div{
     top: 0;
     right: 0px;
     width: 10px;
-    text-align: center;
+    text-align: left;
     padding: 10px 0;
     font-weight:  bold;
 }
