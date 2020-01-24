@@ -15,7 +15,7 @@ document.getElementById("newAccount").addEventListener("submit", event => {
     var state = document.getElementById('inputState').value;
     var zipcode = document.getElementById('inputZip').value;
     var signup = document.getElementById('gridCheck').value;
-    
+
     db.collection("accounts").doc(firstName).set({
         first: firstName,
         last: lastName,
@@ -37,11 +37,12 @@ document.getElementById("newAccount").addEventListener("submit", event => {
             newAccount.gridCheck.value = '';
 
             console.log("Document successfully written!");
+            window.location.href="file:///Users/jackiedavison/Desktop/LiveTree/public/pages/clienthome/clientHome.html"
+
         })
         .catch(function (error) {
             console.error("Error writing document: ", error);
         });
-
 });
 
 
