@@ -83,6 +83,53 @@ document.getElementById("contactForm").addEventListener("submit", event => {
 });
 
 
+//account form add 
+document.getElementById("newAccount").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const app = firebase.app();
+    console.log(app);
+
+    const db = firebase.firestore();
+
+    var firstName = document.getElementById('inputFirst').value;
+    var lastName = document.getElementById('inputLast').value;
+    var password = document.getElementById('inputPassword').value;
+    var email = document.getElementById('inputEmail').value;
+    var city = document.getElementById('inputCity').value;
+    var state = document.getElementById('inputState').value;
+    var zipcode = document.getElementById('inputZip').value;
+    var signup = document.getElementById('gridCheck').value;
+    
+    db.collection("accounts").doc(name).set({
+        first: firstName,
+        last: lastName,
+        password: password,
+        email: email,
+        city: city,
+        state: state,
+        zip: zipcode,
+        signup: signup,
+    })
+        .then(function () {
+            newAccount.firstName.value = '';
+            newAccount.lastName.value = '';
+            newAccount.password.value = '';
+            newAccount.email.value = '';
+            newAccount.city.value = '';
+            newAccount.state.value = '';
+            newAccount.zipcode.value = '';
+            newAccount.signup.value = '';
+
+            console.log("Document successfully written!");
+        })
+        .catch(function (error) {
+            console.error("Error writing document: ", error);
+        });
+
+});
+
+
 // hide/reveal form onClick
 
 $(document).ready(function () {
