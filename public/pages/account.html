@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add File</title>
+
+
+    <!-- include only the Firebase features as you need -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
+
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.7.0/firebase/init.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- jquery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+
+    <link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- update the version number as needed -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+
+    <script>
+        const config = {
+            apiKey: "AIzaSyAG-qx615hR4eDgP1DAmPKhw0Js-o-DFyM",
+            authDomain: "livetree-65129.firebaseapp.com",
+            databaseURL: "https://livetree-65129.firebaseio.com",
+            projectId: "livetree-65129",
+            storageBucket: "livetree-65129.appspot.com",
+            messagingSenderId: "789557141134",
+            appId: "1:789557141134:web:5278c226c72779633873df"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(config); 
+    </script>
+
+
+    <h3 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif">Create A New Account</h3>
+
+
+    <div class="container" style="font-family: Georgia, 'Times New Roman', Times, serif">
+        <div class="row border-bottom border-light" style="position: relative; width: 100%;">
+            <div class="col-md-1">
+                <label>
+                    <a class="nav-link active" style="padding: 0rem;" href="https://jackieczhou.github.io/portfolio/">
+                        <button type="button" class="btn" data-toggle="popover" title="Portfolio Link"
+                            data-content="Click here to check out my portfolio!"
+                            href="https://jackieczhou.github.io/portfolio/">Portfolio</button></label>
+            </div>
+            <div class="col-md-1">
+                <a class="nav-link active" style="padding: 0rem;" href="#"><label data-toggle="popover"
+                        data-content="Google Login is automatically loaded on page load or via button click"><button
+                            onclick="googleLogin()" class="btn">Login</button></label></a>
+            </div>
+            <div class="col-md-1">
+                <a class="btn" href="#">Home</a>
+            </div>
+            <div class="col-md-1">
+                <a class="btn" href="#">Link</a>
+            </div>
+            <div class="col-md-1">
+                <a class="btn" href="#">Link</a>
+            </div>
+            <div class="col-md-1">
+                <a class="btn" href="#">Link</a>
+            </div>
+            <div class="col-md-1">
+                <a class="btn" href="#">Link</a>
+            </div>
+            <div class="col-md-1">
+                <a class="btn" href="#">Link</a>
+            </div>
+            <div class="col-md-4">
+                <form class="form-inline my-2 my-lg-0" style="float: right;">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="googleLogin" id="loadPeople">
+        <ul>
+        </ul>
+    </div>
+    <br>
+
+
+
+    <div class="container" style="width: 50%">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputFirst">First Name</label>
+                    <input type="name" class="form-control" id="inputName">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputLast">Last Name</label>
+                    <input type="name" class="form-control" id="inputName">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>AL</option>
+                            <option>AK</option>
+                            <option>AZ</option>
+                            <option>AR</option>
+                            <option>CA</option>
+                            <option>CO</option>
+                            <option>CT</option>
+                            <option>DE</option>
+                            <option>FL</option>
+                            <option>GA</option>
+                            <option>HI</option>
+                            <option>ID</option>
+                            <option>IL</option>
+                            <option>IN</option>
+                            <option>IA</option>
+                            <option>KS</option>
+                            <option>KY</option>
+                            <option>LA</option>
+                            <option>ME</option>
+                            <option>MD</option>
+                            <option>MA</option>
+                            <option>MI</option>
+                            <option>MN</option>
+                            <option>MS</option>
+                            <option>MO</option>
+                            <option>MT</option>
+                            <option>NE</option>
+                            <option>NV</option>
+                            <option>NH</option>
+                            <option>NJ</option>
+                            <option>NM</option>
+                            <option>NY</option>
+                            <option>NC</option>
+                            <option>ND</option>
+                            <option>OH</option>
+                            <option>OK</option>
+                            <option>OR</option>
+                            <option>PA</option>
+                            <option>RI</option>
+                            <option>SC</option>
+                            <option>SD</option>
+                            <option>TN</option>
+                            <option>TX</option>
+                            <option>UT</option>
+                            <option>VT</option>
+                            <option>VA</option>
+                            <option>WA</option>
+                            <option>WV</option>
+                            <option>WY</option>
+                            <option>WI</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="number" class="form-control" id="inputZip">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Sign up for updates
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <button type="submit" id="btn" class="btn btn-outline-light" style="color: black;">Join</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+
+
+
+    <br><br>
+    <div class="container">
+        <div id="footer" class="card text-center">
+            <div>
+                Featured
+            </div>
+            <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../app.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>
