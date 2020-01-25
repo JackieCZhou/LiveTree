@@ -8,8 +8,7 @@ Features on this project include:
 
 
 Heroku Live:
-https://git.heroku.com/livetree1.git
-
+https://livetree1.herokuapp.com/
 
 To run the code locally:
 clone repo
