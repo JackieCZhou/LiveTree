@@ -45,22 +45,6 @@ document.getElementById("newAccount").addEventListener("submit", event => {
         });
 });
 
-
-
-// hide/reveal form onClick
-
-$(document).ready(function () {
-    $("#formButton").click(function () {
-        $("#form1").toggle();
-    });
-});
-
-$(document).ready(function () {
-    $("#hide").click(function () {
-        $("#form1").toggle();
-    });
-});
-
 // onHover function
 
 $(document).ready(function () {
