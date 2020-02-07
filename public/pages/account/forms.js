@@ -53,3 +53,25 @@ $(document).ready(function () {
         trigger: 'hover'
     });
 });
+
+
+//Secure Auth
+firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+
+    if (email !== 'inputEmail'.value && password !== 'inputPassword'.value) {
+      alert('Incorrect Login Information');
+    } else {
+      alert('Login Sucessful');
+    }
+    console.log(error);
+    document.getElementById('quickstart-sign-in').disabled = false;
+    // [END_EXCLUDE]
+  });
+
+
+
+// Login authentication
+
+function login(){
+    console.log('Working');
+}

@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
     <!-- jquery  -->
@@ -213,42 +213,42 @@
 
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-        
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header" style="padding:35px 50px;">
-                <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Enter password">
+                        </div>
+                        <button onClick='login()' type="submit" class="btn btn-light btn-block"><span
+                                class="glyphicon glyphicon-off"></span> Login</button>
+                    </form>
+                </div>
             </div>
-            <div class="modal-body" style="padding:40px 50px;">
-              <form role="form">
-                <div class="form-group">
-                  <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                  <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                  <input type="text" class="form-control" id="psw" placeholder="Enter password">
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" value="" checked>Remember me</label>
-                </div>
-                  <button type="submit" class="btn btn-light btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-              </form>
-            </div>
-          </div>
         </div>
-      </div> 
+    </div>
     </div>
 
-<style>
-.modal-header, h4, .close {
-    background-color: #110f37;
-    color:white !important;
-    text-align: center;
-    font-size: 30px;
-  }
-</style>
+    <style>
+        .modal-header,
+        h4,
+        .close {
+            background-color: #110f37;
+            color: white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
 
 
     <br><br><br><br><br><br><br><br>
@@ -270,6 +270,39 @@
                 $("#myModal").modal();
             });
         });
+    </script>
+
+    <script>
+        function login() {
+            event.preventDefault();
+            var userEmail = document.getElementById('emailInput').value;
+            var userPassword = document.getElementById('passwordInput').value;
+
+            //Secure Auth
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+
+                var errorCode = error.code;
+                var errorMessage = error.message;
+
+
+                if (email !== 'inputEmail'.value && password !== 'inputPassword'.value) {
+                    alert('Incorrect Login Information');
+                } else {
+                    alert('Login Sucessful');
+                }
+                console.log(error);
+                document.getElementById('quickstart-sign-in').disabled = false;
+                // [END_EXCLUDE]
+            });
+
+
+
+            // Login authentication
+
+            function login() {
+                console.log('Working');
+            }
+        }
     </script>
 
     <script src="./forms.js"></script>
