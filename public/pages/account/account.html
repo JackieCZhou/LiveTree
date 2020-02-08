@@ -273,7 +273,18 @@
     </script>
 
     <script>
+        firebase.auth()onAuthStateChanged(function (user) {
+            var user = firebase.auth().currentUser;
+
+            if (user != null){
+                var email = user.email;
+                document.getElementById("user_para").innerHTML = "Welceome User :" + email;
+
+            }
+        });
+
         function login() {
+            
             event.preventDefault();
             var userEmail = document.getElementById('emailInput').value;
             var userPassword = document.getElementById('passwordInput').value;
