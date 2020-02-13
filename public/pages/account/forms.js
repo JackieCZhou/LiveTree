@@ -54,24 +54,17 @@ $(document).ready(function () {
     });
 });
 
+function login() {
 
-//Secure Auth
-firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    event.preventDefault();
+    var userEmail = document.getElementById('emailInput').value;
+    var userPassword = document.getElementById('passwordInput').value;
 
-    if (email !== 'inputEmail'.value && password !== 'inputPassword'.value) {
-      alert('Incorrect Login Information');
-    } else {
-      alert('Login Sucessful');
-    }
-    console.log(error);
-    document.getElementById('quickstart-sign-in').disabled = false;
-    // [END_EXCLUDE]
-  });
+    //Secure Auth
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
 
-
-
-// Login authentication
-
-function login(){
-    console.log('Working');
-}
+        var errorMessage = "The information entered is incorrect";
+        event.preventDefault();
+        window.alert("Error: ") + errorMessage;
+    })
+};

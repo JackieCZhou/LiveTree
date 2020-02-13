@@ -223,12 +223,11 @@
                 <div class="modal-body" style="padding:40px 50px;">
                     <form role="form">
                         <div class="form-group">
-                            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                            <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                            <input type="password" class="form-control" id="passwordInput" placeholder="Enter password">
+                            <label for="usrname">Username: </label>
+                            <input type="email" id="emailInput" placeholder="Email" style="width:300px;" />
+                            <br>
+                            <label for="psw">Password: </label>
+                            <input type="password" id="passwordInput" placeholder="Password" style="width:300px;" />
                         </div>
                         <button onClick='login()' type="submit" class="btn btn-light btn-block"><span
                                 class="glyphicon glyphicon-off"></span> Login</button>
@@ -272,48 +271,24 @@
         });
     </script>
 
+
     <script>
-        firebase.auth()onAuthStateChanged(function (user) {
-            var user = firebase.auth().currentUser;
-
-            if (user != null){
-                var email = user.email;
-                document.getElementById("user_para").innerHTML = "Welceome User :" + email;
-
-            }
-        });
-
         function login() {
-            
+
             event.preventDefault();
             var userEmail = document.getElementById('emailInput').value;
             var userPassword = document.getElementById('passwordInput').value;
 
             //Secure Auth
-            firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+            firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
 
                 var errorCode = error.code;
-                var errorMessage = error.message;
-
-
-                if (email !== 'inputEmail'.value && password !== 'inputPassword'.value) {
-                    alert('Incorrect Login Information');
-                } else {
-                    alert('Login Sucessful');
-                }
-                console.log(error);
-                document.getElementById('quickstart-sign-in').disabled = false;
-                // [END_EXCLUDE]
+                var errorMessage = "The information entered is incorrect";
+                event.preventDefault();
+                window.alert("Error: ") + errorMessage;
             });
+        };
 
-
-
-            // Login authentication
-
-            function login() {
-                console.log('Working');
-            }
-        }
     </script>
 
     <script src="./forms.js"></script>
